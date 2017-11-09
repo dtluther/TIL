@@ -36,7 +36,7 @@ People will often jump to O(N<sup>2</sup>) because they see two calls, but it ca
 
 The depth of the tree = N (4, in this case). Each of the node has two children, so each level in the call stack has twice as many calls as the one above it:
 <br>
-2<sup>0</sup> + 2<sup>1</sup> + 2<sup>2</sup> + ... + 2<sup>n</sup> &rarr; (2<sup>n + 1</sup> - 1)
+2<sup>0</sup> + 2<sup>1</sup> + 2<sup>2</sup> + ... + 2<sup>n</sup> &rarr; (2<sup>n + 1</sup> - 1) &rarr; O(2<sup>n</sup>)
 
 NOTE:
 <br>
