@@ -36,4 +36,7 @@
                 1) compare the new root (previously the last element) with both its children
                 2) swap with the lesser-value child
                 3) reapt step (2) until the heap property is satisfied again
-                
+
+        Max Heap Extraction (Deletion) and Heapify-Down Animation
+        ![max_heap_deletion_animation](https://user-images.githubusercontent.com/15662012/32638765-b250b33e-c575-11e7-8023-9c62ca5c3018.gif)
+        (Courtesy of https://www.tutorialspoint.com/data_structures_algorithms/heap_data_structure.htm)
