@@ -40,6 +40,6 @@
 * Can access the root using `document.documentElement`
 * Can update CSS property using `#setProperty`:
     ```
-    document.documentElement.style.setProperty(`--${this.name}, ${this.value}`);
+    document.documentElement.style.setProperty(`--${this.name}`, `${this.value}`);
     ```
 * If I change a CSS var for a specific element, it will override the root var, but **ONLY** for that element
