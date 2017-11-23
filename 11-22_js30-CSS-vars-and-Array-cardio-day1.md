@@ -43,3 +43,6 @@
     document.documentElement.style.setProperty(`--${this.name}`, `${this.value}`);
     ```
 * If I change a CSS var for a specific element, it will override the root var, but **ONLY** for that element
+
+### Array Cardio Day 1
+* This was a basic JS review
