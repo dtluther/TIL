@@ -25,5 +25,6 @@
         * the height of each of the elements here is only enough to contain the font, but we can see with the default `align-items` property (`display: flex` declared, no `align-items` present), the elements stretch to fill the container, which here has a height of 100vh
 * `align-items` also has a option called `baseline`, which aligns the baseline of the text in each element in the flex container, e.g.
 
-    ![screen shot 2017-12-10 at 8 14 34 pm](https://user-images.githubusercontent.com/15662012/33815516-cedb0af2-dde6-11e7-844d-da75c6297089.png)
+    ![screen shot 2017-12-10 at 8 16 04 pm](https://user-images.githubusercontent.com/15662012/33815532-0aa6e0ba-dde7-11e7-9f2d-f879296fcedb.png)
+    * yellow line is drawn for reference
 
