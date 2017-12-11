@@ -23,8 +23,25 @@
 
         ![screen shot 2017-12-10 at 8 06 51 pm](https://user-images.githubusercontent.com/15662012/33815367-b570af78-dde5-11e7-88a5-43a7b4d1a4df.png)
         * the height of each of the elements here is only enough to contain the font, but we can see with the default `align-items` property (`display: flex` declared, no `align-items` present), the elements stretch to fill the container, which here has a height of 100vh
-* `align-items` also has a option called `baseline`, which aligns the baseline of the text in each element in the flex container, e.g.
+    * `align-items` also has a option called `baseline`, which aligns the baseline of the text in each element in the flex container, e.g.
 
-    ![screen shot 2017-12-10 at 8 16 04 pm](https://user-images.githubusercontent.com/15662012/33815532-0aa6e0ba-dde7-11e7-9f2d-f879296fcedb.png)
-    * yellow line is drawn for reference
+        ![screen shot 2017-12-10 at 8 16 04 pm](https://user-images.githubusercontent.com/15662012/33815532-0aa6e0ba-dde7-11e7-9f2d-f879296fcedb.png)
+        * yellow line is drawn for reference
+* `align-content` works like `justify-content`, but addresses the extra space on the cross-axis
+    * NOTE: only works with multiple lines of elements
+        * often used with `flex-wrap`
+    * default is `stretch`, just like align-items, e.g.
+
+        ![screen shot 2017-12-10 at 8 26 53 pm](https://user-images.githubusercontent.com/15662012/33815728-858092da-dde8-11e7-9e61-f05bec201dfd.png)
+        * elements stretch past the height needed to contain the text in order to fill the entire flex container (height is 100vh)
+    * e.g., `flex-start`
+
+        ![screen shot 2017-12-10 at 8 29 12 pm](https://user-images.githubusercontent.com/15662012/33815764-da826038-dde8-11e7-9a2a-247fa9d4d757.png)
+        * now, the height of each of the elements is just large enough to contain the text inside
+            * NOTE: if elements are different heights, each row's elements will have the height of the largest element in the row:
+
+                ![screen shot 2017-12-10 at 8 32 01 pm](https://user-images.githubusercontent.com/15662012/33815809-363da496-dde9-11e7-968f-dc5d41d91c58.png)
+        
+
+
 
