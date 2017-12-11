@@ -41,7 +41,10 @@
             * NOTE: if elements are different heights, each row's elements will have the height of the largest element in the row:
 
                 ![screen shot 2017-12-10 at 8 32 01 pm](https://user-images.githubusercontent.com/15662012/33815809-363da496-dde9-11e7-968f-dc5d41d91c58.png)
-        
+* `align-self` gets applied to a flex item, not the container, and it overrides the flex-container command
+    * options include the same options as `align-items`
+
+    ![screen shot 2017-12-10 at 8 41 19 pm](https://user-images.githubusercontent.com/15662012/33815957-8fcca6dc-ddea-11e7-8c2a-8f75989e06e2.png)
 
 
 
