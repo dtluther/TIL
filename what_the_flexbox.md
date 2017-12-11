@@ -47,9 +47,38 @@
     ![screen shot 2017-12-10 at 8 41 19 pm](https://user-images.githubusercontent.com/15662012/33815957-8fcca6dc-ddea-11e7-8c2a-8f75989e06e2.png)
 
 ### The `Flex` Property
-* "What do we do with the extra space?"
+* "What do we do with the extra space, and/or what do I do when I don't have enough space?"
 * `flex` property is applied on a flex item, not the container
-* Consists of
+* Actually consists of three properties: `flex-grow`, `flex-shrink`, and `flex-basis`
 * Default is `auto`, which just makes flex item the width of the content inside of it
+* `flex: 1` is the equivalent of `flex: 1 1 1`
 
-![screen shot 2017-12-10 at 9 04 58 pm](https://user-images.githubusercontent.com/15662012/33816451-d8c5da7c-dded-11e7-9f9a-f8e5e04add62.png)
+    base case:
+
+    ![screen shot 2017-12-10 at 9 18 02 pm](https://user-images.githubusercontent.com/15662012/33816726-d903e90a-ddef-11e7-9fc2-c307f42c27f8.png)
+
+    `flex: 1` on all boxes:
+
+    ![screen shot 2017-12-10 at 9 18 35 pm](https://user-images.githubusercontent.com/15662012/33816727-da615f44-ddef-11e7-9717-b4632a1179d6.png)
+    * each flex item takes up the same amount of extra space available
+
+    with the following CSS:
+    ```
+    .box {
+        flex: 1;
+    }
+    .box2 {
+        flex: 2;
+    }
+    ```
+
+    ![screen shot 2017-12-10 at 9 23 10 pm](https://user-images.githubusercontent.com/15662012/33816788-5c821c16-ddf0-11e7-99fa-790d3a14cb99.png)
+    * box2 takes up twice as much extra space as the rest of the boxes
+
+    with the same CSS as above, and a smaller screen (this is incorporating the `flex-shrink` property, which would be the second input):
+    ![screen shot 2017-12-10 at 9 27 21 pm](https://user-images.githubusercontent.com/15662012/33816852-f2ef5da8-ddf0-11e7-979f-fdcc4b1f8b99.png)
+
+    specific `flex` properties on different boxes:
+
+    ![screen shot 2017-12-10 at 9 04 58 pm](https://user-images.githubusercontent.com/15662012/33816451-d8c5da7c-dded-11e7-9f9a-f8e5e04add62.png)
+    * box5 takes up 3 times as much space as all the boxes with `flex: 1`, and box2 takes up two times as much space as the boxes with `flex: 1`
