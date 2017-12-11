@@ -15,3 +15,11 @@
     * thus, any number > 0 will move the DOM element to end of a flex container if orders of other flex items have default order
 * can also use negative (-) numbers for order
 * NOTE: If you were to drag over to highlight the text after the order has been modified, it will select text in the original order, which is most likely not your intention
+
+### Alignment and Centering
+* `justify-content` default is `flexstart`
+* `align-items` default is `stretch`
+    *  this makes the elements stretch in the direction of the cross-axis, e.g.
+
+        ![screen shot 2017-12-10 at 8 06 51 pm](https://user-images.githubusercontent.com/15662012/33815367-b570af78-dde5-11e7-88a5-43a7b4d1a4df.png)
+        * the height of each of the elements here is only enough to contain the font, but we can see with the default `align-items` property (nothing declared, so default exists), the elements stretch to fill the container, which has a height of 100vh
