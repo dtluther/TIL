@@ -22,4 +22,8 @@
     *  this makes the elements stretch in the direction of the cross-axis, e.g.
 
         ![screen shot 2017-12-10 at 8 06 51 pm](https://user-images.githubusercontent.com/15662012/33815367-b570af78-dde5-11e7-88a5-43a7b4d1a4df.png)
-        * the height of each of the elements here is only enough to contain the font, but we can see with the default `align-items` property (nothing declared, so default exists), the elements stretch to fill the container, which has a height of 100vh
+        * the height of each of the elements here is only enough to contain the font, but we can see with the default `align-items` property (`display: flex` declared, no `align-items` present), the elements stretch to fill the container, which here has a height of 100vh
+* `align-items` also has a option called `baseline`, which aligns the baseline of the text in each element in the flex container, e.g.
+
+    ![screen shot 2017-12-10 at 8 14 34 pm](https://user-images.githubusercontent.com/15662012/33815516-cedb0af2-dde6-11e7-844d-da75c6297089.png)
+
