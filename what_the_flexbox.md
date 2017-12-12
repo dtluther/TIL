@@ -46,7 +46,7 @@
 
     ![screen shot 2017-12-10 at 8 41 19 pm](https://user-images.githubusercontent.com/15662012/33815957-8fcca6dc-ddea-11e7-8c2a-8f75989e06e2.png)
 
-### The `Flex` Property
+### The `flex` Property
 * "What do we do with the extra space, and/or what do I do when I don't have enough space?"
 * `flex` property is applied on a flex item, not the container
 * Actually consists of three properties: `flex-grow`, `flex-shrink`, and `flex-basis`
@@ -82,3 +82,9 @@
 
     ![screen shot 2017-12-10 at 9 04 58 pm](https://user-images.githubusercontent.com/15662012/33816451-d8c5da7c-dded-11e7-9f9a-f8e5e04add62.png)
     * box5 takes up 3 times as much space as all the boxes with `flex: 1`, and box2 takes up two times as much space as the boxes with `flex: 1`
+
+### Breaking Down the `flex` Propery: `flex-grow`, `flex-shrink`, and `flex-basis`
+* `flex: 1` is equivalent to the combination of `flex-grow: 1` and `flex-shrink: 1`
+* `flex-grow`: how much extra space should the element take up in proportion to the other flex items (based on their `flex-grow` properties)
+* `flex-shrink`: how much space should the element give up when the screen shrinks in proportion to the other flex items (based on their `flex-shrink` properties)
+* `flex-basis`: specifies the initial size of the flex item before any extra space (or lack thereof) is distributed to the flex items; it determines the size of the content box unless otherwize specified by `box-sizing`
