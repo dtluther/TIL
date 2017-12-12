@@ -88,3 +88,26 @@
 * `flex-grow`: how much extra space should the element take up in proportion to the other flex items (based on their `flex-grow` properties)
 * `flex-shrink`: how much space should the element give up when the screen shrinks in proportion to the other flex items (based on their `flex-shrink` properties)
 * `flex-basis`: specifies the initial size of the flex item before any extra space (or lack thereof) is distributed to the flex items; it determines the size of the content box unless otherwize specified by `box-sizing`
+    * can use `flex-basis` and `flex-wrap` together if objects are too wide
+        * NOTE: the `flex` properties only affect the row they are on
+
+            ![screen shot 2017-12-11 at 8 11 08 pm](https://user-images.githubusercontent.com/15662012/33867189-b99f8004-deaf-11e7-81ad-78683f4cf1d5.png)
+            * the `flex` property here is applied to each flex item (`.box` class), but it works differently on the second row where `.box3` has `flex-grow: 10`
+* Keep in mind what happens when we change the flex-direction:
+
+    ![screen shot 2017-12-11 at 8 16 55 pm](https://user-images.githubusercontent.com/15662012/33867292-9173f348-deb0-11e7-8f97-8cb85201506b.png)
+    * When there is extra space, box3 here takes up 5 times as much space as the other boxes
+
+    Added a `flex-basis: 250px` to box1 and box2, gave fixed height to flex-container, and implemented `flex-wrap: wrap` on the container:
+
+    ![screen shot 2017-12-11 at 8 21 36 pm](https://user-images.githubusercontent.com/15662012/33867361-2098a280-deb1-11e7-9c8b-911cdb299f4b.png)
+    * There is extra space in column 1, so box3 grows to take up 5 times the extra space. For column 2, all `flex-grow` properties are the same, so they evenly split the extra space.
+
+    Same as above, with added `flex-basis: 100px` for box4
+
+    ![screen shot 2017-12-11 at 9 02 35 pm](https://user-images.githubusercontent.com/15662012/33868237-a999929c-deb6-11e7-9fae-5214070904f4.png)
+    * Now, box4 can also fit in the left column (there is just less extra space for box3, which is fine since all of the `flex-basis` properties are met)
+
+### Cross Browser Support and Autoprefixers
+* NOTE: may not have this issue anymore specifically with flexbox since browsers have updated, but good to know for other new updates
+* Can use Gulp (look up example on setup) or copy and paste existing CSS into something like https://autoprefixer.github.io and it will return all the CSS with all the correct prefixes for different browser support
