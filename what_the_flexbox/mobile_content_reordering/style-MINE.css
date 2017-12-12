@@ -96,7 +96,45 @@ footer {
         flex-basis: 100%;
     }
 
+    /* Flex Container */
     .wrapper {
         display: flex;
+        flex-direction: column;
+    }
+
+    /* Flex Item */
+    .wrapper > * {
+        order: 10
+    }
+
+    .flex-nav {
+        order: 1
+    }
+
+    /* Menu Icon Bar */
+    .toggleNav {
+        display: block;
+    }
+
+    .flex-nav ul {
+        display: none;
+    }
+
+    .flex-nav ul.open {
+        display: flex;
+    }
+
+    /* Header */
+    .top {
+        order: 2;
+        /* This is just to maintain the header in the correct spot; doesn't actually move it */
+    }
+
+    .details {
+        order: 3;
+    }
+
+    .signup {
+        order: 4;
     }
 }

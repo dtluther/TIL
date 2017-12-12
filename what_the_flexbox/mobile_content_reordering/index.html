@@ -88,10 +88,19 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>
-        $(function () {
-            $('.toggleNav').on('click', function () {
-                $('.flex-nav ul').toggleClass('open');
-            });
+        // $(function () {
+        //     $('.toggleNav').on('click', function () {
+        //         $('.flex-nav ul').toggleClass('open');
+        // // NOTE: Cannot use slideToggle() here because it automatically makes the style `display: block`,
+        // // and we need to maintain `display: flex` to keep our menu layout we designed in the CSS
+        //     });
+        // });
+
+        // Practice in Vanilla JS instead
+        const menuLink = document.querySelector('.toggleNav');
+        const menuList = document.querySelector('.flex-nav ul');
+        menuLink.addEventListener('click', () => {
+            menuList.classList.toggle('open');
         });
     </script>
 </body>
