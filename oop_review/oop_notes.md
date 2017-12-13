@@ -21,12 +21,22 @@
         * The user does not need to know how things work underneath the hood; they just need to know what they can do
         * Only relevant data are shown to the user; the unnecessary implementation details are hidden in the class
 3) Polymorphism
-    * The concept of a method processing objects differently based on its class
-        * Basically, one method can have multiple implementations, and the implementation to be used is decided at runtime depending on the class of the object
+    * The concept of calling a (shared) method on an object and it being able to evaluate it correctly based on the type (class) of the object
+        * Basically, one method can have multiple implementations (from a parent class, from others classes, etc.), and the implementation to be used is decided at runtime, called ***overriding***, (or at compiletime, called ***overloading***, which does not occur in dynamically typed languages like Ruby or Python) depending on the class of the object
+    * NOTE: Inheritance is when a child class inherits all data and methods from its parent class. An example of Polymorphism here would be overriding a parent method in the child class. Thus, if you called the same method on the parent class as on the child class, they would operate differently.
     * **Duck Typing**
         * "If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck."
-            * If the object has the characteristics of a duck, it should be able to act like a duck (use the duck's methods)
-        * Ruby sends messages to objects without first checking the type (class)
+            * It doesn't matter the type of the object, the program only cares if it has the correct methods
+                ```
+                def duck_typing(obj)
+                    obj.quack
+                    obj.swim
+                end
+                ```
+                * Any object that has these methods will work in this function; it doesn't have to be what we would expect: a duck
+                * Essentially, if the object can act like a duck, we assume it's a duck
+        * Duck typing works in Ruby because Ruby sends messages to objects without first checking the type (class)
+        * NOTE: This is not possible in Java or C++ (need to declare the type of the argument)
 4) Inheritance
     * See below 
 
