@@ -10,6 +10,19 @@
     * A change in one class might affect another
     * Tightly coupled is not usually a good practice: it's hard to reuse, test, and refactor, and breaking one class can break a whole system
 
+### Principles of OOP
+1) Encapsulation
+    * The concept of bundling together the data and functions that manipulate the data (into a single class), and that keeps both hidden and safe from outside interference
+        * The data cannot be accessed directly, rather other objects (and users) can only access the data through the object's public methods
+    * Encapsulation makes the concept of data hiding possible
+        * Attributes (a.k.a. state, data, instance variables) are kept private and methods are made public to manipulate these attributes
+2) Abstraction
+    * The concept of abstracting away the implementation details and inner workings of the class and only providing the users the relevant methods
+        * The user does not need to know how things work underneath the hood; they just need to know what they can do
+        * Only relevant data are shown to the user; the unnecessary implementation details are hidden in the class
+3) Inheritance
+4) Polymorphism
+
 ### Class Inheritance
 * Used to establish a subclass (sometimes called child class) of a existing class, in order to reuse code
     * A **subclass** has access to all the methods of its parent class, a.k.a. its **superclass**
