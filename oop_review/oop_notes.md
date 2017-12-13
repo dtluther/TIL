@@ -20,8 +20,15 @@
     * The concept of abstracting away the implementation details and inner workings of the class and only providing the users the relevant methods
         * The user does not need to know how things work underneath the hood; they just need to know what they can do
         * Only relevant data are shown to the user; the unnecessary implementation details are hidden in the class
-3) Inheritance
-4) Polymorphism
+3) Polymorphism
+    * The concept of a method processing objects differently based on its class
+        * Basically, one method can have multiple implementations, and the implementation to be used is decided at runtime depending on the class of the object
+    * **Duck Typing**
+        * "If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck."
+            * If the object has the characteristics of a duck, it should be able to act like a duck (use the duck's methods)
+        * Ruby sends messages to objects without first checking the type (class)
+4) Inheritance
+    * See below 
 
 ### Class Inheritance
 * Used to establish a subclass (sometimes called child class) of a existing class, in order to reuse code
