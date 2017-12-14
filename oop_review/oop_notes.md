@@ -190,3 +190,5 @@ Goodbye, Jamis Buck!
     3) Set of methods
     * Attributes and methods are usually marked as being public (+), private(-), or protected (#), and class methods are underlined
 * e.g.
+
+    ![chess-uml](https://user-images.githubusercontent.com/15662012/34017487-d483616a-e0da-11e7-87b3-174b15c3bc2b.png)
