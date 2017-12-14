@@ -1,4 +1,6 @@
-### What Is Object-Oriented Programming
+# Notes on Object Orient Programming
+
+### What Is Object-Oriented Programming?
 * A programming paradigm based on the concept of objects
     * Objects contain data (have **state**)
     * Objects have methods that can access and modify an object's state
@@ -155,3 +157,21 @@ Goodbye, Jamis Buck!
         1) When you are facing two different subclasses of the base class
         AND
         2) The two subclasses have substantially different behavior
+
+### Information Hiding/Encapsulation
+* When we mark methods as ***private***, the only way to access those methods is from within the class itself
+    * Another method in the class can call the private method, but another class or outside user cannot use the method
+    * This is an example of **encapsulation** and hiding the data from the public
+* Which types of methods should be private?
+    * Any that we don't want the outside user to have access to
+    * Any that have low-level details that the user is not concerned with
+* Instance variables are always private unless we reveal them to the public with getter/setter methods
+
+#### Shy Code
+* Another reason to use private methods is it will make it easy to extend and update your code base in the future
+    * The more you expose to users (whether people or other code), the more they will rely on those details and use those methods &rarr; thus, it can be much harder to update the code later because other people are already using it and depending on it, so a change you make can affect the performance/ability to perform of user
+* The point of OOP is to present a simple, minimal interface that abstracts away the internal implementation details in the methods
+    * If code is too permissive (public), you risk leaking internal details to the public, which can be extremely dangerous
+        * e.g., if we allow the public to run `start_engine`, now they have to remember to run `stop_engine`
+* A good OOP design principle is to minimize the public interfaces between classes or to the users
+    * Expose the minimum necessary amount of state and behavior, and nothing more
