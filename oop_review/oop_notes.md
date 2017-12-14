@@ -192,3 +192,13 @@ Goodbye, Jamis Buck!
 * e.g.
 
     ![chess-uml](https://user-images.githubusercontent.com/15662012/34017487-d483616a-e0da-11e7-87b3-174b15c3bc2b.png)
+
+### OOP Design Patterns
+#### Creational Patterns
+* Factory method pattern
+    * Creates objects without specifying the exact class to create
+    * Factory methods are class methods
+* Singleton pattern
+    * Restricts the instantiation of a class to one object
+* Builder pattern
+    * Creates complex objects by separating construction and representation
