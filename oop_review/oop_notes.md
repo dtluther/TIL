@@ -167,7 +167,7 @@ Goodbye, Jamis Buck!
     * Any that have low-level details that the user is not concerned with
 * Instance variables are always private unless we reveal them to the public with getter/setter methods
 
-#### Shy Code
+#### Be Shy With Your Code
 * Another reason to use private methods is it will make it easy to extend and update your code base in the future
     * The more you expose to users (whether people or other code), the more they will rely on those details and use those methods &rarr; thus, it can be much harder to update the code later because other people are already using it and depending on it, so a change you make can affect the performance/ability to perform of user
 * The point of OOP is to present a simple, minimal interface that abstracts away the internal implementation details in the methods
@@ -175,3 +175,18 @@ Goodbye, Jamis Buck!
         * e.g., if we allow the public to run `start_engine`, now they have to remember to run `stop_engine`
 * A good OOP design principle is to minimize the public interfaces between classes or to the users
     * Expose the minimum necessary amount of state and behavior, and nothing more
+
+### Unified Modeling Language (UML)
+* A visual way to represent the relationships between different objects
+    * Can describe classes, such as the structure behind an object-oriented design, or behavior, such as diagramming a set of concurrent processes
+* In UML, classes can be related to each other in different ways (chess example):
+    * Parent-child
+        * `Pawn` is a child of `Piece`
+    * Association ("has a/an" relationship)
+        * `Game` is associated with `Board` because a `Game` has a (i.e. `requires`) a `Board`
+* In UML, a class is usually drawn with three components:
+    1) Name
+    2) Set of attributes (instance variables)
+    3) Set of methods
+    * Attributes and methods are usually marked as being public (+), private(-), or protected (#), and class methods are underlined
+* e.g.
