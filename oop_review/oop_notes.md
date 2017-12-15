@@ -273,7 +273,13 @@ Goodbye, Jamis Buck!
     * **Generalization/Inheritance**
         * ***Is-a-kind-of*** relationship
         * Represented by a line with a hollow arrow in UML
+
             ![screen shot 2017-12-14 at 10 13 07 pm](https://user-images.githubusercontent.com/15662012/34029200-0dbacbb2-e11c-11e7-8dd1-cadac2b5c21c.png)
+            
     * **Realization/Implementation**
         * A relationship between the interface and the implementing (parent class). In other words, the relationship between the blueprint class and the object containing its respective implementation level details). The object is said to *realize* the blueprint class. (https://javapapers.com/oops/association-aggregation-composition-abstraction-generalization-realization-dependency/)
             * e.g., a specific model of a car that *implements* the blueprint of a car realizes the abstraction
+        * A dotted line with a hollow arrow:
+
+            ![screen shot 2017-12-14 at 10 24 48 pm](https://user-images.githubusercontent.com/15662012/34029468-a9715cfa-e11d-11e7-8bc2-0cc27510ec9b.png)
+
