@@ -202,3 +202,29 @@ Goodbye, Jamis Buck!
     * Restricts the instantiation of a class to one object
 * Builder pattern
     * Creates complex objects by separating construction and representation
+
+### Other Important Topics
+* **Cardinality**: the relational model between two objects (or tables in a database)
+    * one-to-many
+    * many-to-many
+    * one-to-zero-or-one
+* **Multiplicity**: used in a UML to specify the cardinality
+    * An inclusive interval of non-negative numbers to specify the allowable number of instances for an element
+    * e.g., this table from https://en.wikipedia.org/wiki/Cardinality_(data_modeling)
+
+        ![screen shot 2017-12-14 at 8 44 02 pm](https://user-images.githubusercontent.com/15662012/34027297-901de14a-e110-11e7-934f-b8746c493597.png)
+
+    * This chart from https://www.uml-diagrams.org/multiplicity.html further explains the multiplicity intervals:
+
+        ![screen shot 2017-12-14 at 8 54 18 pm](https://user-images.githubusercontent.com/15662012/34027368-00c772b2-e111-11e7-8eac-8264c5078a83.png)
+        
+        * The *option* column show another way it could be written
+
+    * Example from http://slideplayer.com/slide/6193568/ showing the difference between a class diagram and an object diagram
+        * Shows multiplicity on the class diagram, which is how it might be represented in UML
+
+        ![screen shot 2017-12-14 at 9 07 05 pm](https://user-images.githubusercontent.com/15662012/34027630-d0b8d85c-e112-11e7-815f-10cf1dd1e956.png)
+
+        * A rental item can have either no or a single customer
+        * A customer can rent either 0 or many rental items
+        * Object names are __underlined__
