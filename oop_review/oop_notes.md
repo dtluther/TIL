@@ -1,4 +1,4 @@
-# Notes on Object Orient Programming
+# Notes on Object-Oriented Programming
 
 ### What Is Object-Oriented Programming?
 * A programming paradigm based on the concept of objects
@@ -35,8 +35,8 @@
                     obj.swim
                 end
                 ```
-                * Any object that has these methods will work in this function; it doesn't have to be what we would expect: a duck
-                * Essentially, if the object can act like a duck, we assume it's a duck
+                * Any object that has these methods will work in this function; it doesn't have to be what you would expect: a duck
+                * Essentially, if the object can act like a duck, you assume it's a duck
         * Duck typing works in Ruby because Ruby sends messages to objects without first checking the type (class)
         * NOTE: This is not possible in Java or C++ (need to declare the type of the argument)
 4) Inheritance
@@ -159,20 +159,20 @@ Goodbye, Jamis Buck!
         2) The two subclasses have substantially different behavior
 
 ### Information Hiding/Encapsulation
-* When we mark methods as ***private***, the only way to access those methods is from within the class itself
+* When you mark methods as ***private***, the only way to access those methods is from within the class itself
     * Another method in the class can call the private method, but another class or outside user cannot use the method
     * This is an example of **encapsulation** and hiding the data from the public
 * Which types of methods should be private?
-    * Any that we don't want the outside user to have access to
+    * Any that you don't want the outside user to have access to
     * Any that have low-level details that the user is not concerned with
-* Instance variables are always private unless we reveal them to the public with getter/setter methods
+* Instance variables are always private unless you reveal them to the public with getter/setter methods
 
 #### Be Shy With Your Code
 * Another reason to use private methods is it will make it easy to extend and update your code base in the future
     * The more you expose to users (whether people or other code), the more they will rely on those details and use those methods &rarr; thus, it can be much harder to update the code later because other people are already using it and depending on it, so a change you make can affect the performance/ability to perform of user
 * The point of OOP is to present a simple, minimal interface that abstracts away the internal implementation details in the methods
     * If code is too permissive (public), you risk leaking internal details to the public, which can be extremely dangerous
-        * e.g., if we allow the public to run `start_engine`, now they have to remember to run `stop_engine`
+        * e.g., if you allow the public to run `start_engine`, now they have to remember to run `stop_engine`
 * A good OOP design principle is to minimize the public interfaces between classes or to the users
     * Expose the minimum necessary amount of state and behavior, and nothing more
 
@@ -192,6 +192,7 @@ Goodbye, Jamis Buck!
 * e.g.
 
     ![chess-uml](https://user-images.githubusercontent.com/15662012/34017487-d483616a-e0da-11e7-87b3-174b15c3bc2b.png)
+
 
 ### OOP Design Patterns
 #### Creational Patterns
@@ -237,6 +238,11 @@ Goodbye, Jamis Buck!
     * **Association**
         * A semantically weak relationship between otherwise unrelated objects
             * A "using" ("has a") relationship
+        * For people with Rails familiarity, it would be like having a class that represented a Rails association relation
+            * For instance, if you had a `Student` class and a `Seminar` class, you could use `Enrollment` as an association class. Use cases for `Enrollment` might include keeping track of the grades,But depending on the situation, you may not want/need an `Enrollment` object. e.g., UML example from http://www.agilemodeling.com/artifacts/classDiagram.htm:
+
+                ![screen shot 2017-12-15 at 12 18 00 pm](https://user-images.githubusercontent.com/15662012/34059023-0ac69b04-e192-11e7-9f82-07d70b3ccbad.png)
+                
         * Can be represented as one-to-one, one-to-many, and many-to-many (also known as cardinality)
         * Represented by a single arrow in a UML:
 
@@ -275,7 +281,7 @@ Goodbye, Jamis Buck!
         * Represented by a line with a hollow arrow in UML
 
             ![screen shot 2017-12-14 at 10 13 07 pm](https://user-images.githubusercontent.com/15662012/34029200-0dbacbb2-e11c-11e7-8dd1-cadac2b5c21c.png)
-            
+
     * **Realization/Implementation**
         * A relationship between the interface and the implementing (parent class). In other words, the relationship between the blueprint class and the object containing its respective implementation level details). The object is said to *realize* the blueprint class. (https://javapapers.com/oops/association-aggregation-composition-abstraction-generalization-realization-dependency/)
             * e.g., a specific model of a car that *implements* the blueprint of a car realizes the abstraction
@@ -283,3 +289,4 @@ Goodbye, Jamis Buck!
 
             ![screen shot 2017-12-14 at 10 24 48 pm](https://user-images.githubusercontent.com/15662012/34029468-a9715cfa-e11d-11e7-8bc2-0cc27510ec9b.png)
 
+* Great link for UML info: http://www.agilemodeling.com/artifacts/classDiagram.htm
