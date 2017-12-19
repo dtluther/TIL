@@ -242,7 +242,7 @@ Goodbye, Jamis Buck!
             * For instance, if you had a `Student` class and a `Seminar` class, you could use `Enrollment` as an association class. Use cases for `Enrollment` might include keeping track of the grades,But depending on the situation, you may not want/need an `Enrollment` object. e.g., UML example from http://www.agilemodeling.com/artifacts/classDiagram.htm:
 
                 ![screen shot 2017-12-15 at 12 18 00 pm](https://user-images.githubusercontent.com/15662012/34059023-0ac69b04-e192-11e7-9f82-07d70b3ccbad.png)
-                
+
         * Can be represented as one-to-one, one-to-many, and many-to-many (also known as cardinality)
         * Represented by a single arrow in a UML:
 
@@ -257,7 +257,7 @@ Goodbye, Jamis Buck!
 
     * **Aggregation**
         * A specialized association between two or more objects in which there exists ownership, but they still have their own life cycles
-            * An employee can belong to many departments, but if a departed gets removed, the employee object is not destroyed
+            * An employee can belong to many departments, but if a department gets removed, the employee object is not destroyed
         * In UML, represented using a line with a hollow diamond
 
             ![screen shot 2017-12-14 at 10 16 49 pm](https://user-images.githubusercontent.com/15662012/34029279-84accebe-e11c-11e7-8500-0bae43ca94bb.png)
