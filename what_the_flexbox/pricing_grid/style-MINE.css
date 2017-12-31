@@ -60,6 +60,7 @@ a {
   margin: 0 auto;
   
   display: flex;
+  /* align-items: center; */
 }
 
 .plan {
@@ -73,6 +74,8 @@ a {
   display: flex;
   /* flex-direction: column; */
   flex-wrap: wrap;
+  /* By using wrap with a `flex-basis: 100%`, it makes everything
+  on its own line, so it's set up like a column. */
 }
 
 .plan > * {
