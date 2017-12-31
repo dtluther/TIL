@@ -54,9 +54,39 @@ a {
   margin: 10px 0;
 }
 
-
+/* Flex Container */
 .pricing-grid {
   max-width:750px;
   margin: 0 auto;
   
+  display: flex;
+}
+
+.plan {
+  background: rgba(255, 255, 255, 0.2);
+  margin: 20px;
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+
+  flex: 1;
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+}
+
+.plan > * {
+  flex: 1 1 100%;
+  /* Remember, flex-basis (the 100%) will operate similarly to
+  `min width`, but when we shrink the screen smaller than the
+  `flex-basis` size, the flex items shrink, whereas `min-width`
+  would cause the user to need a scroll bar to see the items. */
+}
+
+.plan .cta {
+  align-self: flex-end;
+  /* This is how we get the buttons of shorter columns to 
+  also be aligned at the bottom. However, in order to do
+  this, we need to make the container of this item (.plan)
+  a flex container. */
 }
