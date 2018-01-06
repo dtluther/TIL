@@ -22,7 +22,7 @@ It may not be completely intuitive as to what the next step is (it sure was not 
     ```
     array[2 - 1] = 3
     ```
-* For second value, `3`:
+* For the second value, `3`:
     ```
     array[3 - 1] = 3
     ```
