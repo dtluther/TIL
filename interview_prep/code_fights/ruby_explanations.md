@@ -16,7 +16,25 @@ def firstDuplicate(a)
 end
 ```
 
-A solution that would be `O(n)` time complexity would be to create a hash table with the keys as the number at the index and the value with a count (or a boolean, or what have you). Then you return the first number that already is present in the hash table, or `-1` if you don't find anything.
+A solution that would be `O(n)` time complexity would be to create a hash table with the keys as the number at the index and the value with a count (or a boolean, or what have you). Then we return the first number that already is present in the hash table, or `-1` if we don't find anything.
 <br>
 <br>
-However, the `O(1)` space constraint makes it tricky, as you can not add an additional data structure that depends on the size of the array
+However, the `O(1)` space constraint makes it tricky, as we can not add an additional data structure that scales with the size of the numbers array. In the prompt, there is another clue that can help us solve the problem: the fact that the array only contains numbers in the range from `1` to the length of the array.
+<br><br>
+It may not be completely intuitive as to what the next step is (it sure was not for me), but we can actually use the values as indices because each value in the array is between `1` and `a.length`. For instance, in `[2, 3, 3, 1, 5, 2]` (no duplicates here, but just to show the trick), we can use each `1` less than each value as an index in the array:
+* For the first value, `2`:
+    ```
+    array[2 - 1] = 3
+    ```
+    * At index 1
+* For second value, `3`:
+    ```
+    array[3 - 1] = 3
+    ```
+    * At index 2
+* For the third value, `3`:
+    ```
+    array[3 - 1] = 3
+    ```
+    * At index 2
+Now, we can come up with a solution without any additional data structres. Using this trick, if we see a duplicate value, we are going to index into the same place in the array twice, as shown by the third step. Thus, all we have to do is give ourselves a ***sign*** that we have seen this number before. We can do this by inversing the sign every time
