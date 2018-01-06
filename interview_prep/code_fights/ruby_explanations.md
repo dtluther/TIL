@@ -22,17 +22,14 @@ It may not be completely intuitive as to what the next step is (it sure was not 
     ```
     array[2 - 1] = 3
     ```
-    * At index 1
 * For second value, `3`:
     ```
     array[3 - 1] = 3
     ```
-    * At index 2
 * For the third value, `3`:
     ```
     array[3 - 1] = 3
     ```
-    * At index 2
 Now, we can come up with a solution without any additional data structres. Using this trick, if we see a duplicate value, we are going to index into the same place in the array twice, as shown by the third step. Thus, all we have to do is give ourselves a ***sign*** that we have seen this number before. We can do this by inversing the sign the indexed value every time, and when we see the first negative, return the absolute value (the positive) of that number! There will be one issue with this though. If we hit a negative number (due to us replacing with the inverse), we cannot index into that point in the array. So we will need to take the `1` less than the **absolute value** of each number If we did this with the array above, it would like like this:
 0) For the first value (0th index), `2`:
     ```
