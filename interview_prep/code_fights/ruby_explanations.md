@@ -65,3 +65,5 @@ def first_duplicate(arr)
     -1
 end
 ```
+
+Hope you find that helpful! Please let me know if you came up with any alternative ways to solve this problem while maintaining the constraints.
