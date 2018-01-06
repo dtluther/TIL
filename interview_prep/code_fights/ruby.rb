@@ -16,6 +16,7 @@ def first_duplicate(a)
     -1
 end
 
+# Test cases
 first_duplicate([2, 3, 3, 1, 5, 2])
 first_duplicate([2, 4, 3, 5, 1])
 first_duplicate([8, 4, 6, 2, 6, 4, 7, 9, 5, 8])
