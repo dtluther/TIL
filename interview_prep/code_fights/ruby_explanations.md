@@ -9,22 +9,14 @@ Note: Write a solution with `O(n)` time complexity and `O(1)` additional space c
 
 Given an array a that contains only numbers in the range from `1` to `a.length`, find the first duplicate number for which the second occurrence has the minimal index. In other words, if there are more than 1 duplicated numbers, return the number for which the second occurrence has a smaller index than the second occurrence of the other number does. If there are no such elements, return `-1`.
 
-```
-def firstDuplicate(a)
-    a.each do |value|
-        return value.abs if a[value.abs - 1] < 0
-        a[value.abs - 1] = -a[value.abs - 1]
-    end
-
-    -1
-end
-```
+__Example__:
+For `arr = [2, 3, 3, 1, 5, 2]`, the output should be
+`firstDuplicate(arr) = 3`.
 
 A solution that would be `O(n)` time complexity would be to create a hash table with the keys as the number at the index and the value with a count (or a boolean, or what have you). Then we return the first number that already is present in the hash table, or `-1` if we don't find anything.
-<br>
-<br>
+
 However, the `O(1)` space constraint makes it tricky, as we can not add an additional data structure that scales with the size of the numbers array. In the prompt, there is another clue that can help us solve the problem: the fact that the array only contains numbers in the range from `1` to the length of the array.
-<br><br>
+
 It may not be completely intuitive as to what the next step is (it sure was not for me), but we can actually use the values as indices because each value in the array is between `1` and `a.length`. For instance, in `[2, 3, 3, 1, 5, 2]` (no duplicates here, but just to show the trick), we can use each `1` less than each value as an index in the array:
 * For the first value, `2`:
     ```
