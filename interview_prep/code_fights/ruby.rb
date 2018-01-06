@@ -43,7 +43,74 @@ def first_not_repeating_character(str)
     "_"
 end
 
-p first_not_repeating_character("abacabad") # => "c"
-p first_not_repeating_character("abacabaabacaba") # => "-"
-p first_not_repeating_character("abcdefghijklmnopqrstuvwxyziflskecznslkjfabe") # => "d"
-p first_not_repeating_character("bcccccccccccccyb") # => "y"
+# # Test cases
+# p first_not_repeating_character("abacabad") # => "c"
+# p first_not_repeating_character("abacabaabacaba") # => "-"
+# p first_not_repeating_character("abcdefghijklmnopqrstuvwxyziflskecznslkjfabe") # => "d"
+# p first_not_repeating_character("bcccccccccccccyb") # => "y"
+
+# PROBLEM
+# Note: Try to solve this task in-place (with O(1) additional memory), since
+# this is what you'll be asked to do during an interview.
+
+# You are given an n x n 2D matrix that represents an image. Rotate the image
+# by 90 degrees (clockwise).
+# Example:
+# For
+# arr = [[1, 2, 3],
+#      [4, 5, 6],
+#      [7, 8, 9]]
+# rotate_image(arr) =
+#     [[7, 4, 1],
+#      [8, 5, 2],
+#      [9, 6, 3]]
+
+def rotate_image(arr)
+    size = arr.size
+    
+    layer = 0
+    while layer < size / 2
+        # When we rotate, we'll want to rotate each element except the last one in the
+        # row, because it will have already been rotated
+        first_rotate_idx = layer
+        last_rotate_idx = (size - 1) - layer
+        
+        col_idx = first_rotate_idx
+        while col_idx < last_rotate_idx
+            offset = col_idx - first_rotate_idx
+            debugger
+            # save the number (pixel) in the top row
+            top_row_pixel = arr[first_rotate_idx][col_idx]
+
+            # rotate left column to top row
+            arr[first_rotate_idx][col_idx] = arr[last_rotate_idx - offset][first_rotate_idx]
+
+            # rotate bottom row to left column
+            arr[last_rotate_idx - offset][first_rotate_idx] = arr[last_rotate_idx][last_rotate_idx - offset]
+
+            # rotate right column to bottom row
+            arr[last_rotate_idx][last_rotate_idx - offset] = arr[col_idx][last_rotate_idx]
+
+            # rotate top row to right column
+            arr[col_idx][last_rotate_idx] = top_row_pixel
+            
+            col_idx += 1
+        end
+        layer += 1
+    end
+end
+
+rotate_image([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+])
+
+# disp arr[0]
+# disp arr[1]
+# disp arr[2]
+# disp layer
+# disp first_rotate_idx
+# disp col_idx
+# disp last_rotate_idx
+# disp top_row_pixel
