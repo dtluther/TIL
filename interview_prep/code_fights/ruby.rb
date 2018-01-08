@@ -66,37 +66,36 @@ end
 #      [9, 6, 3]]
 
 def rotate_image(arr)
-    size = arr.size
-    
-    layer = 0
-    while layer < size / 2
-        # When we rotate, we'll want to rotate each element except the last one in the
-        # row, because it will have already been rotated
-        first_rotate_idx = layer
-        last_rotate_idx = (size - 1) - layer
-        
-        col_idx = first_rotate_idx
-        while col_idx < last_rotate_idx
-            offset = col_idx - first_rotate_idx
+    last_index = arr.size - 1
+
+    # i will essentially act as our layer
+    i = 0
+    while i < (arr.size / 2)
+        # column index, j, which should always start at the same index as the layer
+        # to avoid moving outer-layer elements
+        # j iterates through every element in each subarray EXCEPT the last (already rotated)
+        j = i
+        while j < last_index # last_index = arr[i].size - 1 because the array is square
             debugger
-            # save the number (pixel) in the top row
-            top_row_pixel = arr[first_rotate_idx][col_idx]
+            # store the value in the top row
+            stored = arr[i][j]
 
-            # rotate left column to top row
-            arr[first_rotate_idx][col_idx] = arr[last_rotate_idx - offset][first_rotate_idx]
+            # rotate left to top
+            arr[i][j] = arr[last_index - j][i]
 
-            # rotate bottom row to left column
-            arr[last_rotate_idx - offset][first_rotate_idx] = arr[last_rotate_idx][last_rotate_idx - offset]
+            # rotate bottom to left
+            arr[last_index - j][i] = arr[last_index - i][last_index - j]
 
-            # rotate right column to bottom row
-            arr[last_rotate_idx][last_rotate_idx - offset] = arr[col_idx][last_rotate_idx]
+            # rotate right to bottom
+            arr[last_index - i][last_index - j] = arr[j][last_index - i]
 
-            # rotate top row to right column
-            arr[col_idx][last_rotate_idx] = top_row_pixel
-            
-            col_idx += 1
+            # rotate top to right by replacing right with stored
+            arr[j][last_index - i] = stored
+
+            j += 1
         end
-        layer += 1
+        
+        i += 1
     end
 end
 
@@ -109,8 +108,9 @@ rotate_image([
 # disp arr[0]
 # disp arr[1]
 # disp arr[2]
-# disp layer
-# disp first_rotate_idx
-# disp col_idx
+# disp i
+# disp j
+# disp stored
 # disp last_rotate_idx
 # disp top_row_pixel
+
