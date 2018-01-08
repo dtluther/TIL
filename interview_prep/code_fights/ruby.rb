@@ -325,3 +325,36 @@ p sudoku2([['.', '.', '.', '.', '2', '.', '.', '9', '.'],
         ['.', '1', '.', '2', '.', '.', '.', '.', '.'],
         ['.', '2', '.', '.', '3', '.', '.', '.', '.']]
 ) # => false
+
+# # A really nice Ruby solution
+# eval <<-RUBY
+# class ConstraintChecker
+#     def initialize
+#         @items = {}
+#     end
+#     def <<(val)
+#         return unless val.to_i > 0
+#         raise if @items[val]
+#         @items[val] = true
+#     end
+# end
+# RUBY
+
+# def sudoku2(grid)
+#     c = 9.times.map { ConstraintChecker.new }
+#     r = 9.times.map { ConstraintChecker.new }
+#     b = 9.times.map { ConstraintChecker.new }
+#     begin
+#         9.times { |i|
+#             9.times { |j|
+#                 r[i] << grid[i][j]
+#                 c[j] << grid[i][j]
+#                 b[(i / 3) * 3 + (j / 3)] << grid[i][j]
+#             }
+#         }
+#         true
+#     rescue
+#         false
+#     end
+# end
+
