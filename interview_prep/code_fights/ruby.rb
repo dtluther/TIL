@@ -76,7 +76,8 @@ def rotate_image(arr)
         # j iterates through every element in each subarray EXCEPT the last (already rotated)
         j = i
         while j < last_index # last_index = arr[i].size - 1 because the array is square
-            debugger
+            # debugger
+
             # store the value in the top row
             stored = arr[i][j]
 
@@ -97,20 +98,32 @@ def rotate_image(arr)
         
         i += 1
     end
+
+    # The submission code shouldn't include this, this is just to visualize the result
+    p "#{arr.size}x#{arr.size} Rotated Matrix"
+    arr.each do |row|
+        p row
+    end
 end
 
-rotate_image([
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-])
-
+# For 3x3, to see info and your array rotating, comment in the debugger and display the following:
 # disp arr[0]
 # disp arr[1]
 # disp arr[2]
 # disp i
 # disp j
 # disp stored
-# disp last_rotate_idx
-# disp top_row_pixel
+
+# rotate_image([
+#     [1, 2, 3],
+#     [4, 5, 6],
+#     [7, 8, 9]
+# ])
+
+# rotate_image([
+#     [1, 2, 3, 4],
+#     [5, 6, 7, 8],
+#     [9, 10, 11, 12],
+#     [13, 14, 15, 16]
+# ])
 
