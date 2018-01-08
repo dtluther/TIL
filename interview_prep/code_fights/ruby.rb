@@ -183,7 +183,6 @@ def sudoku2(grid)
     n = grid.length
     # Check rows
     row_idx = 0
-    debugger
     while row_idx < n
         row_count = Hash.new(0)
 
@@ -215,79 +214,63 @@ def sudoku2(grid)
     end
 
     # Check squares
+    square1 = Hash.new(0)
+    square2 = Hash.new(0)
+    square3 = Hash.new(0)
+    square4 = Hash.new(0)
+    square5 = Hash.new(0)
+    square6 = Hash.new(0)
+    square7 = Hash.new(0)
+    square8 = Hash.new(0)
+    square9 = Hash.new(0)
     (0...n).each do |row_idx|
         (0...n).each do |col_idx|
-            while row_idx < n/3 && col_idx < n/3
-                count = Hash.new(0)
-                value = grid[row_idx][col_idx]
+            value = grid[row_idx][col_idx]
+            if row_idx < n/3 && col_idx < n/3
                 next if value == "."
 
-                return false if count[value] > 0
-                count[value] += 1
-            end
-            while row_idx < n/3 && col_idx < 2*n/3
-                count = Hash.new(0)
-                value = grid[row_idx][col_idx]
+                return false if square1[value] > 0
+                square1[value] += 1
+            elsif row_idx < n/3 && col_idx < 2*n/3
                 next if value == "."
 
-                return false if count[value] > 0
-                count[value] += 1
-            end
-            while row_idx < n/3 && col_idx < n
-                count = Hash.new(0)
-                value = grid[row_idx][col_idx]
+                return false if square2[value] > 0
+                square2[value] += 1
+            elsif row_idx < n/3 && col_idx < n
                 next if value == "."
 
-                return false if count[value] > 0
-                count[value] += 1
-            end
-            while row_idx < 2*n/3 && col_idx < n/3
-                count = Hash.new(0)
-                value = grid[row_idx][col_idx]
+                return false if square3[value] > 0
+                square3[value] += 1
+            elsif row_idx < 2*n/3 && col_idx < n/3
                 next if value == "."
 
-                return false if count[value] > 0
-                count[value] += 1
-            end
-            while row_idx < 2*n/3 && col_idx < 2*n/3
-                count = Hash.new(0)
-                value = grid[row_idx][col_idx]
+                return false if square4[value] > 0
+                square4[value] += 1
+            elsif row_idx < 2*n/3 && col_idx < 2*n/3
                 next if value == "."
 
-                return false if count[value] > 0
-                count[value] += 1
-            end
-            while row_idx < n && col_idx < n/3
-                count = Hash.new(0)
-                value = grid[row_idx][col_idx]
+                return false if square5[value] > 0
+                square5[value] += 1
+            elsif row_idx < 2*n/3 && col_idx < n
                 next if value == "."
 
-                return false if count[value] > 0
-                count[value] += 1
-            end
-            while row_idx < n && col_idx < 2*n/3
-                count = Hash.new(0)
-                value = grid[row_idx][col_idx]
+                return false if square6[value] > 0
+                square6[value] += 1
+            elsif row_idx < n && col_idx < n/3
                 next if value == "."
 
-                return false if count[value] > 0
-                count[value] += 1
-            end
-            while row_idx < n && col_idx < n
-                count = Hash.new(0)
-                value = grid[row_idx][col_idx]
+                return false if square7[value] > 0
+                square7[value] += 1
+            elsif row_idx < n && col_idx < 2*n/3
                 next if value == "."
 
-                return false if count[value] > 0
-                count[value] += 1
-            end
-            while row_idx < n/3 && col_idx < n/3
-                count = Hash.new(0)
-                value = grid[row_idx][col_idx]
+                return false if square8[value] > 0
+                square8[value] += 1
+            elsif row_idx < n && col_idx < n
                 next if value == "."
 
-                return false if count[value] > 0
-                count[value] += 1
+                return false if square9[value] > 0
+                square9[value] += 1
             end
         end
     end
@@ -314,86 +297,31 @@ def sudoku2(grid)
 
     #     i += 1
     # end
-
-    # try number 1
-    # coordinates = Hash.new([])
-
-    # row_count = Hash.new(0)
-    # col_count = Hash.new(0)
-    # square1 = Hash.new(0)
-    # square2 = Hash.new(0)
-    # square3 = Hash.new(0)
-    # square4 = Hash.new(0)
-    # square5 = Hash.new(0)
-    # square6 = Hash.new(0)
-    # square7 = Hash.new(0)
-    # square8 = Hash.new(0)
-    # square9 = Hash.new(0)
-
-    # i = 0
-    # while i < grid.length
-    #     j = 0
-    #     while j < grid[i].length
-    #         value = grid[i][j]
-
-    #         return false if coordinates[value].size > 9
-    #         coordinates[grid] << [i, j]
-
-    #         j += 1
-    #     end
-
-    #     i += 1
-    # end
-
-    # coordinates.each do |value, location|
-    #     location.each do |coord_pair|
-    #         row, col = coord_pair[0], coord_pair[1]
-
-    #         return false if row_count[row] > 0
-    #         row_count[row] += 1
-
-    #         return false if col_count[col] > 0
-    #         col_cont[col] += 1
-
-    #         square1[value] += 1 if row < 3 && col < 3
-            
-    #         square2[value] += 1 if row < 3 && col < 6
-            
-    #         square3[value] += 1 if row < 3 && col < 9
-            
-    #         square4[value] += 1 if row < 6 && col < 3
-            
-    #         square5[value] += 1 if row < 6 && col < 6
-            
-    #         square6[value] += 1 if row < 6 && col < 9
-            
-    #         square7[value] += 1 if row < 9 && col < 3
-            
-    #         square8[value] += 1 if row < 9 && col < 6
-            
-    #         square9[value] += 1 if row < 9 && col < 9
-            
-    #         [square1, square2, square3, square4, square5, square6, square7, square8, square9].each do |hashmap|
-    #             return false if hashmap.values[0] > 9
-    #         end
-    #     end
-    # end
-
-    # true
 end
 
-sudoku2([['.', '.', '1'],
-         ['.', '6', '.'],
-         ['.', '.', '.']]
-)
-
-# sudoku2([['.', '.', '.', '1', '4', '.', '.', '2', '.'],
-#         ['.', '.', '6', '.', '.', '.', '.', '.', '.'],
-#         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
-#         ['.', '.', '1', '.', '.', '.', '.', '.', '.'],
-#         ['.', '6', '7', '.', '.', '.', '.', '.', '9'],
-#         ['.', '.', '.', '.', '.', '.', '8', '1', '.'],
-#         ['.', '3', '.', '.', '.', '.', '.', '.', '6'],
-#         ['.', '.', '.', '.', '.', '7', '.', '.', '.'],
-#         ['.', '.', '.', '5', '.', '.', '.', '7', '.']]
+# sudoku2([['.', '.', '1'],
+#          ['.', '6', '.'],
+#          ['.', '.', '.']]
 # )
+
+p sudoku2([['.', '.', '.', '1', '4', '.', '.', '2', '.'],
+        ['.', '.', '6', '.', '.', '.', '.', '.', '.'],
+        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
+        ['.', '.', '1', '.', '.', '.', '.', '.', '.'],
+        ['.', '6', '7', '.', '.', '.', '.', '.', '9'],
+        ['.', '.', '.', '.', '.', '.', '8', '1', '.'],
+        ['.', '3', '.', '.', '.', '.', '.', '.', '6'],
+        ['.', '.', '.', '.', '.', '7', '.', '.', '.'],
+        ['.', '.', '.', '5', '.', '.', '.', '7', '.']]
+) # => true
+
+p sudoku2([['.', '.', '.', '.', '2', '.', '.', '9', '.'],
+        ['.', '.', '.', '.', '6', '.', '.', '.', '.'],
+        ['7', '1', '.', '.', '7', '5', '.', '.', '.'],
+        ['.', '7', '.', '.', '.', '.', '.', '.', '.'],
+        ['.', '.', '.', '.', '8', '3', '.', '.', '.'],
+        ['.', '.', '8', '.', '.', '7', '.', '6', '.'],
+        ['.', '.', '.', '.', '.', '2', '.', '.', '.'],
+        ['.', '1', '.', '2', '.', '.', '.', '.', '.'],
+        ['.', '2', '.', '.', '3', '.', '.', '.', '.']]
+) # => false
