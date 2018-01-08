@@ -214,64 +214,18 @@ def sudoku2(grid)
     end
 
     # Check squares
-    square1 = Hash.new(0)
-    square2 = Hash.new(0)
-    square3 = Hash.new(0)
-    square4 = Hash.new(0)
-    square5 = Hash.new(0)
-    square6 = Hash.new(0)
-    square7 = Hash.new(0)
-    square8 = Hash.new(0)
-    square9 = Hash.new(0)
+    # Create an array of 9 square maps
+    squares = 9.times.map { Hash.new(0)}
+    
     (0...n).each do |row_idx|
         (0...n).each do |col_idx|
             value = grid[row_idx][col_idx]
-            if row_idx < n/3 && col_idx < n/3
-                next if value == "."
+            # next unless value.to_i > 0 # converting a non-number to_i results in 0, so this works, but dangerous if there were 0's
+            next if value == "."
 
-                return false if square1[value] > 0
-                square1[value] += 1
-            elsif row_idx < n/3 && col_idx < 2*n/3
-                next if value == "."
-
-                return false if square2[value] > 0
-                square2[value] += 1
-            elsif row_idx < n/3 && col_idx < n
-                next if value == "."
-
-                return false if square3[value] > 0
-                square3[value] += 1
-            elsif row_idx < 2*n/3 && col_idx < n/3
-                next if value == "."
-
-                return false if square4[value] > 0
-                square4[value] += 1
-            elsif row_idx < 2*n/3 && col_idx < 2*n/3
-                next if value == "."
-
-                return false if square5[value] > 0
-                square5[value] += 1
-            elsif row_idx < 2*n/3 && col_idx < n
-                next if value == "."
-
-                return false if square6[value] > 0
-                square6[value] += 1
-            elsif row_idx < n && col_idx < n/3
-                next if value == "."
-
-                return false if square7[value] > 0
-                square7[value] += 1
-            elsif row_idx < n && col_idx < 2*n/3
-                next if value == "."
-
-                return false if square8[value] > 0
-                square8[value] += 1
-            elsif row_idx < n && col_idx < n
-                next if value == "."
-
-                return false if square9[value] > 0
-                square9[value] += 1
-            end
+            square = squares[(row_idx / 3) * 3 + (col_idx / 3)]
+            return false if square[value] > 0
+            square[value] += 1
         end
     end
 
