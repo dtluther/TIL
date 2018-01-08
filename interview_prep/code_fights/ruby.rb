@@ -112,7 +112,6 @@ def rotate_image(arr)
     end
 end
 
-
 # # Test Cases
 # # Debugger Display for 3x3 Matrix
 # # For 3x3, to see info and your array rotating, comment in the debugger and display the following:
@@ -156,3 +155,92 @@ end
 # #     [8,9,8,9,3], 
 # #     [2,9,2,7,7]]
 
+# PROBLEM
+# Sudoku is a number-placement puzzle. The objective is to fill a 9 × 9 grid with
+# numbers in such a way that each column, each row, and each of the nine 3 × 3 sub-grids
+# that compose the grid all contain all of the numbers from 1 to 9 one time.
+
+# Implement an algorithm that will check whether the given grid of numbers represents
+# a valid Sudoku puzzle according to the layout rules described above. Note that the
+# puzzle represented by grid does not have to be solvable.
+
+# Example:
+# For
+# grid = [['.', '.', '.', '1', '4', '.', '.', '2', '.'],
+#         ['.', '.', '6', '.', '.', '.', '.', '.', '.'],
+#         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
+#         ['.', '.', '1', '.', '.', '.', '.', '.', '.'],
+#         ['.', '6', '7', '.', '.', '.', '.', '.', '9'],
+#         ['.', '.', '.', '.', '.', '.', '8', '1', '.'],
+#         ['.', '3', '.', '.', '.', '.', '.', '.', '6'],
+#         ['.', '.', '.', '.', '.', '7', '.', '.', '.'],
+#         ['.', '.', '.', '5', '.', '.', '.', '7', '.']]
+# the output should be
+# sudoku2(grid) = true
+
+def sudoku2(grid)
+    coordinates = Hash.new([])
+
+    row_count = Hash.new(0)
+    col_count = Hash.new(0)
+    square1 = Hash.new(0)
+    square2 = Hash.new(0)
+    square3 = Hash.new(0)
+    square4 = Hash.new(0)
+    square5 = Hash.new(0)
+    square6 = Hash.new(0)
+    square7 = Hash.new(0)
+    square8 = Hash.new(0)
+    square9 = Hash.new(0)
+
+    i = 0
+    while i < grid.length
+        j = 0
+        while j < grid[i].length
+            value = grid[i][j]
+
+            return false if coordinates[value].size > 9
+            coordinates[grid] << [i, j]
+
+            j += 1
+        end
+
+        i += 1
+    end
+
+    coordinates.each do |value, location|
+        location.each do |coord_pair|
+            row, col = coord_pair[0], coord_pair[1]
+
+            return false if row_count[row] > 0
+            row_count[row] += 1
+
+            return false if col_count[col] > 0
+            col_cont[col] += 1
+
+            square1[value] += 1 if row < 3 && col < 3
+            
+            square2[value] += 1 if row < 3 && col < 6
+            
+            square3[value] += 1 if row < 3 && col < 9
+            
+            square4[value] += 1 if row < 6 && col < 3
+            
+            square5[value] += 1 if row < 6 && col < 6
+            
+            square6[value] += 1 if row < 6 && col < 9
+            
+            square7[value] += 1 if row < 9 && col < 3
+            
+            square8[value] += 1 if row < 9 && col < 6
+            
+            square9[value] += 1 if row < 9 && col < 9
+            
+            [square1, square2, square3, square4, square5, square6, square7, square8, square9].each do |hashmap|
+                return false if hashmap.values[0] > 9
+            end
+        end
+    end
+
+    true
+end

@@ -7,6 +7,11 @@ At the bare minimum, I want to commit to this every workday that I am in town. A
 
 The first entry for this was on Saturday, 1/6, which was about 9 weeks after finishing App Academy.
 
+## 1/7 - Sunday
+The goal was two problems on CodeFights, and work on some more of the LearnNode project. I redid a problem and understood it extremely well, and am working on finsihing up another. Most likely won't work on Node tonight. Overall, rather unproductive Sunday with coding, although I took care of several external chores. Also started reading What's Best Next, and will finish the intro today.
+
+I need to figure out the best way help myself remove distraction and allow myself to focus AND enjoy learning more of these algorithms.
+
 ## 1/6 - Saturday
 I doubt my average entry will be of this length, but as this is a sort of new endeavor, this one has a few more lines of information.
 
