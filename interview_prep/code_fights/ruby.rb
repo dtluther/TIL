@@ -71,11 +71,17 @@ def rotate_image(arr)
     # i will essentially act as our layer
     i = 0
     while i < (arr.size / 2)
+        
         # column index, j, which should always start at the same index as the layer
         # to avoid moving outer-layer elements
-        # j iterates through every element in each subarray EXCEPT the last (already rotated)
         j = i
-        while j < last_index # last_index = arr[i].size - 1 because the array is square
+
+        # this makes sure j never iterates over the last element in the layer, because
+        # it will have already been rotated from the first rotation in that layer
+        # NOTE: this mistake can best be shown in a 5x5 or larger, if we forgot this
+        layer_offset = last_index - i
+
+        while j < (layer_offset) # last_index = arr[i].size - 1 because the array is square
             # debugger
 
             # store the value in the top row
@@ -85,13 +91,13 @@ def rotate_image(arr)
             arr[i][j] = arr[last_index - j][i]
 
             # rotate bottom to left
-            arr[last_index - j][i] = arr[last_index - i][last_index - j]
+            arr[last_index - j][i] = arr[layer_offset][last_index - j]
 
             # rotate right to bottom
-            arr[last_index - i][last_index - j] = arr[j][last_index - i]
+            arr[layer_offset][last_index - j] = arr[j][layer_offset]
 
             # rotate top to right by replacing right with stored
-            arr[j][last_index - i] = stored
+            arr[j][layer_offset] = stored
 
             j += 1
         end
@@ -106,24 +112,47 @@ def rotate_image(arr)
     end
 end
 
-# For 3x3, to see info and your array rotating, comment in the debugger and display the following:
-# disp arr[0]
-# disp arr[1]
-# disp arr[2]
-# disp i
-# disp j
-# disp stored
 
-# rotate_image([
-#     [1, 2, 3],
-#     [4, 5, 6],
-#     [7, 8, 9]
-# ])
+# # Test Cases
+# # Debugger Display for 3x3 Matrix
+# # For 3x3, to see info and your array rotating, comment in the debugger and display the following:
+# # disp arr[0]
+# # disp arr[1]
+# # disp arr[2]
+# # disp i
+# # disp j
+# # disp stored
+#
+# rotate_image(
+#     [[1, 2, 3],
+#      [4, 5, 6],
+#      [7, 8, 9]]
+# )
+# # => [[7, 4, 1],
+# #     [8, 5, 2],
+# #     [9, 6, 3]]
 
-# rotate_image([
-#     [1, 2, 3, 4],
-#     [5, 6, 7, 8],
-#     [9, 10, 11, 12],
-#     [13, 14, 15, 16]
-# ])
+# rotate_image(
+#     [[1, 2, 3, 4],
+#      [5, 6, 7, 8],
+#      [9, 10, 11, 12],
+#      [13, 14, 15, 16]]
+# )
+# # => [[13, 9, 5, 1],
+# #     [14, 10, 6, 2],
+# #     [15, 11, 7, 3],
+# #     [16, 12, 8, 4]]
+
+# rotate_image(
+#     [[10,9,6,3,7], 
+#      [6,10,2,9,7], 
+#      [7,6,3,8,2], 
+#      [8,9,7,9,9], 
+#      [6,8,6,8,2]]
+# )
+# # => [[6,8,7,6,10], 
+# #     [8,9,6,10,9], 
+# #     [6,7,3,2,6], 
+# #     [8,9,8,9,3], 
+# #     [2,9,2,7,7]]
 
