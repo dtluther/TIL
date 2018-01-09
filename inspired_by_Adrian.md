@@ -7,6 +7,9 @@ At the bare minimum, I want to commit to this every workday that I am in town. A
 
 The first entry for this was on Saturday, 1/6, which was about 9 weeks after finishing App Academy.
 
+## 1/8 - Monday
+Finished arrays section on CodeFights interview prep, and got the last one with no help at all. Started on linked lists, but got stuck. Looking forward to tackling them tomorrow.
+
 ## 1/7 - Sunday
 The goal was two problems on CodeFights, and work on some more of the LearnNode project. I redid a problem and understood it extremely well, and am working on finsihing up another. Most likely won't work on Node tonight. Overall, rather unproductive Sunday with coding, although I took care of several external chores. Also started reading What's Best Next, and will finish the intro today.
 
