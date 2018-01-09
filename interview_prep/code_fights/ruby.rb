@@ -43,7 +43,7 @@ def first_not_repeating_character(str)
     "_"
 end
 
-# # Test cases
+# # TEST CASES
 # p first_not_repeating_character("abacabad") # => "c"
 # p first_not_repeating_character("abacabaabacaba") # => "-"
 # p first_not_repeating_character("abcdefghijklmnopqrstuvwxyziflskecznslkjfabe") # => "d"
@@ -55,7 +55,7 @@ end
 
 # You are given an n x n 2D matrix that represents an image. Rotate the image
 # by 90 degrees (clockwise).
-# Example:
+# EXAMPLE:
 # For
 # arr = [[1, 2, 3],
 #      [4, 5, 6],
@@ -112,7 +112,7 @@ def rotate_image(arr)
     end
 end
 
-# # Test Cases
+# # TEST CASES
 # # Debugger Display for 3x3 Matrix
 # # For 3x3, to see info and your array rotating, comment in the debugger and display the following:
 # # disp arr[0]
@@ -164,7 +164,7 @@ end
 # a valid Sudoku puzzle according to the layout rules described above. Note that the
 # puzzle represented by grid does not have to be solvable.
 
-# Example:
+# EXAMPLE:
 # For
 # grid = [['.', '.', '.', '1', '4', '.', '.', '2', '.'],
 #         ['.', '.', '6', '.', '.', '.', '.', '.', '.'],
@@ -253,32 +253,33 @@ def sudoku2(grid)
     # end
 end
 
-# sudoku2([['.', '.', '1'],
-#          ['.', '6', '.'],
-#          ['.', '.', '.']]
-# )
+# # TEST CASES
+# # sudoku2([['.', '.', '1'],
+# #          ['.', '6', '.'],
+# #          ['.', '.', '.']]
+# # ) # +> true
 
-p sudoku2([['.', '.', '.', '1', '4', '.', '.', '2', '.'],
-        ['.', '.', '6', '.', '.', '.', '.', '.', '.'],
-        ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
-        ['.', '.', '1', '.', '.', '.', '.', '.', '.'],
-        ['.', '6', '7', '.', '.', '.', '.', '.', '9'],
-        ['.', '.', '.', '.', '.', '.', '8', '1', '.'],
-        ['.', '3', '.', '.', '.', '.', '.', '.', '6'],
-        ['.', '.', '.', '.', '.', '7', '.', '.', '.'],
-        ['.', '.', '.', '5', '.', '.', '.', '7', '.']]
-) # => true
+# p sudoku2([['.', '.', '.', '1', '4', '.', '.', '2', '.'],
+#         ['.', '.', '6', '.', '.', '.', '.', '.', '.'],
+#         ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
+#         ['.', '.', '1', '.', '.', '.', '.', '.', '.'],
+#         ['.', '6', '7', '.', '.', '.', '.', '.', '9'],
+#         ['.', '.', '.', '.', '.', '.', '8', '1', '.'],
+#         ['.', '3', '.', '.', '.', '.', '.', '.', '6'],
+#         ['.', '.', '.', '.', '.', '7', '.', '.', '.'],
+#         ['.', '.', '.', '5', '.', '.', '.', '7', '.']]
+# ) # => true
 
-p sudoku2([['.', '.', '.', '.', '2', '.', '.', '9', '.'],
-        ['.', '.', '.', '.', '6', '.', '.', '.', '.'],
-        ['7', '1', '.', '.', '7', '5', '.', '.', '.'],
-        ['.', '7', '.', '.', '.', '.', '.', '.', '.'],
-        ['.', '.', '.', '.', '8', '3', '.', '.', '.'],
-        ['.', '.', '8', '.', '.', '7', '.', '6', '.'],
-        ['.', '.', '.', '.', '.', '2', '.', '.', '.'],
-        ['.', '1', '.', '2', '.', '.', '.', '.', '.'],
-        ['.', '2', '.', '.', '3', '.', '.', '.', '.']]
-) # => false
+# p sudoku2([['.', '.', '.', '.', '2', '.', '.', '9', '.'],
+#         ['.', '.', '.', '.', '6', '.', '.', '.', '.'],
+#         ['7', '1', '.', '.', '7', '5', '.', '.', '.'],
+#         ['.', '7', '.', '.', '.', '.', '.', '.', '.'],
+#         ['.', '.', '.', '.', '8', '3', '.', '.', '.'],
+#         ['.', '.', '8', '.', '.', '7', '.', '6', '.'],
+#         ['.', '.', '.', '.', '.', '2', '.', '.', '.'],
+#         ['.', '1', '.', '2', '.', '.', '.', '.', '.'],
+#         ['.', '2', '.', '.', '3', '.', '.', '.', '.']]
+# ) # => false
 
 # # A really nice Ruby solution
 # eval <<-RUBY
@@ -312,3 +313,96 @@ p sudoku2([['.', '.', '.', '.', '2', '.', '.', '9', '.'],
 #     end
 # end
 
+# PROBLEM
+# A cryptarithm is a mathematical puzzle for which the goal is to find the
+# correspondence between letters and digits, such that the given arithmetic
+# equation consisting of letters holds true when the letters are converted to digits.
+
+# You have an array of strings crypt, the cryptarithm, and an an array containing the
+# mapping of letters and digits, solution. The array crypt will contain three
+# non-empty strings that follow the structure: [word1, word2, word3], which should
+# be interpreted as the word1 + word2 = word3 cryptarithm.
+
+# If crypt, when it is decoded by replacing all of the letters in the cryptarithm
+# with digits using the mapping in solution, becomes a valid arithmetic equation
+# containing no numbers with leading zeroes, the answer is true. If it does not
+# become a valid arithmetic solution, the answer is false.
+
+# EXAMPLE:
+# For `crypt = ["SEND", "MORE", "MONEY"]` and
+# solution = [['O', '0'],
+            # ['M', '1'],
+            # ['Y', '2'],
+            # ['E', '5'],
+            # ['N', '6'],
+            # ['D', '7'],
+            # ['R', '8'],
+            # ['S', '9']]
+# the output should be
+# is_crypt_solution(crypt, solution) = true
+
+# When you decrypt "SEND", "MORE", and "MONEY" using the mapping given in crypt, you
+#  get 9567 + 1085 = 10652 which is correct and a valid arithmetic equation.
+
+# EXAMPLE:
+# For `crypt = ["TEN", "TWO", "ONE"]` and
+# solution = [['O', '1'],
+            # ['T', '0'],
+            # ['W', '9'],
+            # ['E', '5'],
+            # ['N', '4']]
+# the output should be
+# is_crypt_solution(crypt, solution) = false
+
+# Even though 054 + 091 = 145, 054 and 091 both contain leading zeroes, meaning that
+# this is not a valid solution.
+
+def is_crypt_solution(crypt, solution)
+    solution_hash = {}
+    solution.each do |arr_pair|
+        solution_hash[arr_pair[0]] = arr_pair[1]
+    end
+
+    digit_str_1, digit_str_2, digit_str_3 = crypt.map.with_index do |word, idx|
+        digits = word.split('').map do |letter|
+            solution_hash[letter]
+        end
+
+        digits.join('')
+    end
+
+    # Check to make sure there are no leading 0's, unless the number is 0
+    [digit_str_1, digit_str_2, digit_str_3].each do |digit_str|
+        next if digit_str.length == 1
+
+        return false if digit_str[0] == "0"
+    end
+
+    # Check to make sure the sum of first two words = third word
+    digit_str_1.to_i +  digit_str_2.to_i == digit_str_3.to_i
+end
+
+# p is_crypt_solution(
+#     ["SEND", 
+#      "MORE", 
+#      "MONEY"], 
+#     [["O","0"], 
+#      ["M","1"], 
+#      ["Y","2"], 
+#      ["E","5"], 
+#      ["N","6"], 
+#      ["D","7"], 
+#      ["R","8"], 
+#      ["S","9"]]
+# ) # => true
+
+# p is_crypt_solution(
+#     ["TEN", 
+#      "TWO", 
+#      "ONE"], 
+#     [["O","1"], 
+#      ["T","0"], 
+#      ["W","9"], 
+#      ["E","5"], 
+#      ["N","4"]]
+# ) # => false
