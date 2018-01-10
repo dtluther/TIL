@@ -7,6 +7,9 @@ At the bare minimum, I want to commit to this every workday that I am in town. A
 
 The first entry for this was on Saturday, 1/6, which was about 9 weeks after finishing App Academy.
 
+## 1/9 - Tuesday
+Apps today. Got a response from a front end position, so debating doing a quick project for some review.
+
 ## 1/8 - Monday
 Finished arrays section on CodeFights interview prep, and got the last one with no help at all. Started on linked lists, but got stuck. Looking forward to tackling them tomorrow.
 
