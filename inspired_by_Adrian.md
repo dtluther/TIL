@@ -7,6 +7,11 @@ At the bare minimum, I want to commit to this every workday that I am in town. A
 
 The first entry for this was on Saturday, 1/6, which was about 9 weeks after finishing App Academy.
 
+## 1/10 - Wednesday
+Prepped to leave for Budafest, so read a Medium article today: https://medium.freecodecamp.org/how-i-re-built-the-medium-clap-effect-and-what-i-got-out-of-the-experiment-991672995fdf. "Good artists copy; great artists steal." - Pablo Picasso. This was the quote that semi-inspired the author to go ahead and try to recreate someone else's idea by hand, and he learned a lot from it. Eventually, he put it on CodePen and the pen was selected and it got viewed by 2000+ people, and he got to give a talk at the ReactJS Summit, Lagos.
+
+So it's good to find projects and recreate them for learning, even if it's typing out someone else's code line-by-line (just give them credit and don't actually *steal* their code :) ).
+
 ## 1/9 - Tuesday
 Apps today. Got a response from a front end position, so debating doing a quick project for some review.
 
