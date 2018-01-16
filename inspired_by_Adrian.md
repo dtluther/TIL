@@ -7,6 +7,9 @@ At the bare minimum, I want to commit to this every workday that I am in town. A
 
 The first entry for this was on Saturday, 1/6, which was about 9 weeks after finishing App Academy.
 
+## 1/15 - Monday
+Back from Budafest 2018. AMAZING. Read Nathan Kontny's article about deliberate practice, which I want to come back to occasionally: https://m.signalvnoise.com/deliberate-practice-5eebebb72e4f. Repetition, Imitation, Experimentation, Contraints. Thse are things I can use for deliberate practice to improve my skills in anything, even science or arts.
+
 ## 1/10 - Wednesday
 Prepped to leave for Budafest, so read a Medium article today: https://medium.freecodecamp.org/how-i-re-built-the-medium-clap-effect-and-what-i-got-out-of-the-experiment-991672995fdf. "Good artists copy; great artists steal." - Pablo Picasso. This was the quote that semi-inspired the author to go ahead and try to recreate someone else's idea by hand, and he learned a lot from it. Eventually, he put it on CodePen and the pen was selected and it got viewed by 2000+ people, and he got to give a talk at the ReactJS Summit, Lagos.
 
