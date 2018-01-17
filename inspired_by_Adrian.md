@@ -7,6 +7,9 @@ At the bare minimum, I want to commit to this every workday that I am in town. A
 
 The first entry for this was on Saturday, 1/6, which was about 9 weeks after finishing App Academy.
 
+## 1/16 - Tuesday
+Recovered from jetlag, cleaned emails, and scheduled interviews. Scheduled time to study algorithms in the mornings with Trevor beginning end of this week.
+
 ## 1/15 - Monday
 Back from Budafest 2018. AMAZING. Read Nathan Kontny's article about deliberate practice, which I want to come back to occasionally: https://m.signalvnoise.com/deliberate-practice-5eebebb72e4f. Repetition, Imitation, Experimentation, Contraints. Thse are things I can use for deliberate practice to improve my skills in anything, even science or arts.
 
