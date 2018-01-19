@@ -7,6 +7,12 @@ At the bare minimum, I want to commit to this every workday that I am in town. A
 
 The first entry for this was on Saturday, 1/6, which was about 9 weeks after finishing App Academy.
 
+## 1/18 - Thursday
+Finished coding challenge from Thorn. Had informal phone screen with RE, and informal (slightly technical) phone screen with Level, and just embarrassed myself with my lack of answers to simples frontend questions. Here's to taking that embarrassment and learning about all of the different frontend concepts for CSS, JS, HTML, cross-browser compatibility, and responsiveness.
+
+## 1/17 - Wednesday
+Worked on coding challenge from Thorn.
+
 ## 1/16 - Tuesday
 Recovered from jetlag, cleaned emails, and scheduled interviews. Scheduled time to study algorithms in the mornings with Trevor beginning end of this week.
 
