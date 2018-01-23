@@ -7,6 +7,9 @@ At the bare minimum, I want to commit to this every workday that I am in town. A
 
 The first entry for this was on Saturday, 1/6, which was about 9 weeks after finishing App Academy.
 
+## 1/22 - Monday
+"Do something today that your future self would be proud of." A quote Tim Ferriss reposted on Instagram. Today, signed up for interviewing.io (in Beta right now), and it gives a discount for InterviewCake. May take a look at one of these to practice techinical interviews.
+
 ## 1/18 - Thursday
 Finished coding challenge from Thorn. Had informal phone screen with RE, and informal (slightly technical) phone screen with Level, and just embarrassed myself with my lack of answers to simples frontend questions. Here's to taking that embarrassment and learning about all of the different frontend concepts for CSS, JS, HTML, cross-browser compatibility, and responsiveness.
 
