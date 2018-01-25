@@ -7,6 +7,9 @@ At the bare minimum, I want to commit to this every workday that I am in town. A
 
 The first entry for this was on Saturday, 1/6, which was about 9 weeks after finishing App Academy.
 
+## 1/24 - Wednesday
+Scheduled behavior call with another company, did some practice with linked lists on CodeFights, but I think I want to review their structure more as some of the problems don't seem to be making sense.
+
 ## 1/23 - Tuesday
 Rejected by Thorn, asked for feedback, won't provide any due to volume. Also got rejected by Level, but I did terrible in that interview. Read a really great blog post on Medium by a HR grad on ho wto get a job after a bootcamp: https://medium.freecodecamp.org/5-key-learnings-from-the-post-bootcamp-job-search-9a07468d2331.
 
