@@ -7,6 +7,9 @@ At the bare minimum, I want to commit to this every workday that I am in town. A
 
 The first entry for this was on Saturday, 1/6, which was about 9 weeks after finishing App Academy.
 
+## 1/25 - Thursday
+Behavioral phone call with company, received coding challenge. Have 24 hours due Sunday. Also worked on 2 linked list problems. Got one correctly, then solved another with suboptimal time complexity and space complexity, so reviewing it.
+
 ## 1/24 - Wednesday
 Scheduled behavior call with another company, did some practice with linked lists on CodeFights, but I think I want to review their structure more as some of the problems don't seem to be making sense.
 
