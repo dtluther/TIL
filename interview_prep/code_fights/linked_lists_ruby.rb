@@ -78,5 +78,32 @@ end
 # isListPalindrome(l) = false
 
 def isListPalindrome(l)
+    # # Naive way creating another linked list in reverse
+    # return true if l.nil?
+    
+    # curr = l
+    
+    # reversed = ListNode.new(curr.value)
+    # curr = curr.next
+    
+    # while curr
+    #     new_node = ListNode.new(curr.value)
+        
+    #     new_node.next = reversed
+    #     reversed = new_node
+        
+    #     break unless curr.next
+    #     curr = curr.next
+    # end
+    
+    # p1, p2 = l, reversed
+    # while p1 || p2
+    #     return false unless p1.value == p2.value
+    #     p1 = p1.next
+    #     p2 = p2.next
+    # end
+    
+    # true
+    
     
 end
