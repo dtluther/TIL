@@ -7,6 +7,9 @@ At the bare minimum, I want to commit to this every workday that I am in town. A
 
 The first entry for this was on Saturday, 1/6, which was about 9 weeks after finishing App Academy.
 
+## 1/26 - Friday
+More applications, did some HackerRank prep in JS to prepare for the coding challenge which I will begin tomorrow evening.
+
 ## 1/25 - Thursday
 Behavioral phone call with company, received coding challenge. Have 24 hours due Sunday. Also worked on 2 linked list problems. Got one correctly, then solved another with suboptimal time complexity and space complexity, so reviewing it.
 
@@ -15,7 +18,6 @@ Scheduled behavior call with another company, did some practice with linked list
 
 ## 1/23 - Tuesday
 Rejected by Thorn, asked for feedback, won't provide any due to volume. Also got rejected by Level, but I did terrible in that interview. Read a really great blog post on Medium by a HR grad on ho wto get a job after a bootcamp: https://medium.freecodecamp.org/5-key-learnings-from-the-post-bootcamp-job-search-9a07468d2331.
-
 
 ## 1/22 - Monday
 "Do something today that your future self would be proud of." A quote Tim Ferriss reposted on Instagram. Today, signed up for interviewing.io (in Beta right now), and it gives a discount for InterviewCake. May take a look at one of these to practice techinical interviews.
