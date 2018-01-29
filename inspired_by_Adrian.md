@@ -7,6 +7,12 @@ At the bare minimum, I want to commit to this every workday that I am in town. A
 
 The first entry for this was on Saturday, 1/6, which was about 9 weeks after finishing App Academy.
 
+## 1/28 - Sunday
+Wasn't able to finish the coding challenge completely, and spent majority of the time I had on it. Made me realize there was a lot of stuff about Rails, React, Redux that I don't fully understand, so I made some notes. I'm looking into going back through some of our curriculum and final projects for understanding.
+
+## 1/27 - Saturday
+Begain frontend coding challenge for company at around 6. They estimate 2-4 hours to do it, but I have get a full day on the test. Looks like it may take a while.
+
 ## 1/26 - Friday
 More applications, did some HackerRank prep in JS to prepare for the coding challenge which I will begin tomorrow evening.
 
