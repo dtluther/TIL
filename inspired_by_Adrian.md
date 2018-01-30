@@ -7,6 +7,9 @@ At the bare minimum, I want to commit to this every workday that I am in town. A
 
 The first entry for this was on Saturday, 1/6, which was about 9 weeks after finishing App Academy.
 
+## 1/29 - Monday
+Spent my day finishing the coding challenge from Blend (for myself, as they already said they would not be moving forward with me). It was an awesome experience. I learned some CSS tricks, made the page responsive (at a very basic level), and ended up hosting it so now I have a nice clean project to add to my site.
+
 ## 1/28 - Sunday
 Wasn't able to finish the coding challenge completely, and spent majority of the time I had on it. Made me realize there was a lot of stuff about Rails, React, Redux that I don't fully understand, so I made some notes. I'm looking into going back through some of our curriculum and final projects for understanding.
 
