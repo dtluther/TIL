@@ -7,6 +7,9 @@ At the bare minimum, I want to commit to this every workday that I am in town. A
 
 The first entry for this was on Saturday, 1/6, which was about 9 weeks after finishing App Academy.
 
+## 1/30 - Tuesday
+Spent quite a bit of time customizing terminal today with oh-my-zsh and powershell theme specifically. Also chatted with a friend about a big company referral, so going to prepare for that over the next 2 weeks. Additionally, got a call for an onsite Thursday. Going to refresh on some RoR knowledge, and general Ruby.
+
 ## 1/29 - Monday
 Spent my day finishing the coding challenge from Blend (for myself, as they already said they would not be moving forward with me). It was an awesome experience. I learned some CSS tricks, made the page responsive (at a very basic level), and ended up hosting it so now I have a nice clean project to add to my site.
 
