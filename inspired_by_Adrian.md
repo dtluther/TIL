@@ -7,6 +7,9 @@ At the bare minimum, I want to commit to this every workday that I am in town. A
 
 The first entry for this was on Saturday, 1/6, which was about 9 weeks after finishing App Academy.
 
+## 2/1 - Thursday
+First day of February. A good day.
+
 ## 1/31 - Wednesday
 Prepped for onsite tomorrow by reviewing blocks, procs, and lambdas in Ruby. Tomorrow will review some ActiveRecord lifecycle methods, Rails, and a little bit of SQL.
 
