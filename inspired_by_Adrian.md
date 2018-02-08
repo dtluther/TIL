@@ -7,6 +7,9 @@ At the bare minimum, I want to commit to this every workday that I am in town. A
 
 The first entry for this was on Saturday, 1/6, which was about 9 weeks after finishing App Academy.
 
+## 2/7 - Wednesday
+Accepted job with RE this week. WOOHOO!!!!
+
 ## 2/1 - Thursday
 First day of February. A good day.
 
