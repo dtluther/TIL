@@ -7,6 +7,9 @@ At the bare minimum, I want to commit to this every workday that I am in town. A
 
 The first entry for this was on Saturday, 1/6, which was about 9 weeks after finishing App Academy.
 
+## 2/9 - Friday
+Began the "Learn Enough to Be Dangerous" Command line course. Learned details behind `echo`, `man`, `cat`.
+
 ## 2/8 - Thursday
 To-do: RSPEC prep, rails readings, command line advanced stuff.
 
