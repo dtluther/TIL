@@ -47,11 +47,63 @@
 #         continue
 #     print("Found a number", num)
 
-### Defining functions
-def fib(n):
-    a, b = 0, 1
-    while a < n:
-        print(a, end = ' ')
-        a, b = b, a+b
-    print()
-fib(2000)
+# ### Defining functions
+# def fib(n):
+#     a, b = 0, 1
+#     while a < n:
+#         print(a, end = ' ')
+#         a, b = b, a+b
+#     print()
+# fib(2000)
+
+# f = fib
+# fib(10)
+
+# print(fib)
+# print(fib(100))
+
+# def fib2(n):
+#     result = []
+#     a, b = 0, 1
+#     while a < n:
+#         result.append(a)
+#         a, b = b, a+b
+#     return result
+
+# f100 = fib2(100)
+# print(f100)
+
+
+# ### Default Argument Values
+# def ask_ok(prompt, retries=4, reminder='Please try again!'):
+#     while True:
+#         ok = input(prompt)
+#         if ok in ('y', 'ye', 'yes'):
+#             return True
+#         elif ok in ('n', 'no', 'nop', 'nope'):
+#             return False
+#         retries = retries - 1
+#         if retries < 0:
+#             raise ValueError('invalid user response')
+#         print(reminder)
+
+# # ask_ok('Do you really want to quit? ')
+# # ask_ok('OK to overwrite the file? ', 2)
+# ask_ok('OK to overwrite the file? ', 2, 'Come on, only yes or no!')
+
+# i = 5
+# def f(arg=i):
+#     print(arg)
+
+# i = 6
+# f() # default values are evaluated at the point of function definition in the defining scope
+
+# ## The default value is evaluated only once, so the following
+# ## function accumulates the arguments passed to it on subsequent calls:
+# def f(a, L=[]):
+#     L.append(a)
+#     return L
+
+# print(f(1))
+# print(f(2))
+# print(f(3))
