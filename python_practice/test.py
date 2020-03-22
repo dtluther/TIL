@@ -306,3 +306,110 @@
 # ## can also contain complex expressions and nested functions
 # from math import pi
 # print([str(round(pi, i)) for i in range(1, 6)])
+
+# ### 5.1.4 Nested List Comprehensions
+# matrix = [
+#     [1, 2, 3, 4],
+#     [5, 6, 7, 8],
+#     [9, 10, 11, 12]
+# ]
+# ## transpose
+# print([[row[i] for row in matrix] for i in range(4)])
+# ## The nested listcomp is evaluated in the context of the following for, so
+# ## this is equivalent to:
+# ## >>> transposed = []
+# ## >>> for i in range(4):
+# ## ...     transposed.append([row[i] for row in matrix])
+
+# print(list(zip(*matrix)))
+
+# ### 5.3 Tuples and Sequences
+# ## tuples are immutable and consist of a number of values separated by commas
+# ## HOWEVER, it's possible to have tuples that contain mutable objects, like lists
+# t = 1235, 54321, 'hello'
+# print(type(t))
+# print(t[0])
+
+# ## immutable
+# t[0] = 88888
+# # >>> Traceback (most recent call last):
+# # ...   File "test.py", line 334, in <module>
+# # ...     t[0] = 88888
+# # ... TypeError: 'tuple' object does not support item assignment
+
+# ## empty tuple
+# empty = ()
+# print(len(empty))
+# ## singleton
+# singleton = 'hello',    # <-- note trailing comma
+# print(len(singleton))
+# print(singleton)
+
+# t2 = 1, 2, 'test', 'tuple'      # <-- tuple packing
+# a, b, c, d = t2                 # <-- unpacking the tuple (or any sequence)
+# print(a, b, c, d)
+
+# ### 5.4 Sets
+# ## to create an empty set, must use set(), not {} (that's an empty dictionary)
+# basket = {'apple', 'orange', 'apple', 'orange', 'pear', 'banana'}
+
+# print(basket)                   # automatically removed duplicates
+# print('orange' in basket)       # fast membership testing
+# print('crabgrass' in basket)
+
+# a = set('abracadabra')
+# b = set('alacazam')
+
+# print(a)                        # unique letters in a
+# print(a - b)                    # letters in a but not in b
+# print(a | b)                    # union (letters in a or b or both)
+# print(a & b)                    # intersection (letters in both a and b)
+# print(a ^ b)                    # letters in a or b but NOT both
+
+# ## set comprehensions are also supported
+# print({x for x in 'abracadabra' if x not in 'abc'})
+
+
+# ### 5.5 Dictionaries
+# tel = {'jack': 4098, 'sape': 4139}
+# tel['guido'] = 4127
+# print(tel)
+# print(tel['jack'])
+
+# del tel['sape']
+# tel['irv'] = 4127
+# print(tel)
+
+# print(list(tel))
+
+# print(sorted(tel))
+
+# print('guido' in tel)
+# print('jack' not in tel)
+
+# d = dict([('sape', 4139), ('guido', 4127), ('jack', 4098)])
+# print(d)
+
+# ## also dict comprehensions can be created
+# d2 = {x: x**2 for x in (2, 4, 6)}
+# print(d2)
+
+# ## when the keys are simplestrings, can specify pairs using keyword arguments
+# d3 = dict(sape=4139, guido=4127, jack=4098)
+# print(d3)
+
+### 5.6 Looping Techniques
+## when looping through dicts, items() method retrives the key and corredpsonding value
+knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+for k, v in knights.items():
+    print(k, v)
+
+## when looping through a sequence, enumerate() gives position index and value
+for i, v in enumerate(['tic', 'tac', 'toe']):
+    print(i, v)
+
+## to loop over 2+ sequences simultaneously, entries can be paired with zip()
+questions = ['name', 'quest', 'favorite color']
+answers = ['lancelot', 'the holy grail', 'blue']
+for q, a in zip(questions, answers):
+    print('What is your {0}? it is {1}.'.format(q,a))
