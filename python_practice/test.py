@@ -444,11 +444,104 @@
 # # The argument to repr() may be any Python object:
 # print(repr((x, y, ('spam', 'eggs'))))
 
-### 7.1.1 Formatted String Literals
-table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 7678}
-## passing an integer after the ':' makes the field that minimum number of characters wide:
-for name, phone in table.items():
-    print(f'{name:10} ==> {phone:10d}')
-# >>> Sjoerd     ==>       4127
-# >>> Jack       ==>       4098
-# >>> Dcab       ==>       7678
+# ### 7.1.1 Formatted String Literals
+# table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 7678}
+# ## passing an integer after the ':' makes the field that minimum number of characters wide:
+# for name, phone in table.items():
+#     print(f'{name:10} ==> {phone:10d}')
+# # >>> Sjoerd     ==>       4127
+# # >>> Jack       ==>       4098
+# # >>> Dcab       ==>       7678
+
+# ## '!a' applies asciii(), '!s' applies str(), and '!r' applies repr()
+# animals = 'eels'
+# print(f'My hovercraft is full of {animals}.')
+# print(f'My hovercraft is full of {animals!r}.')
+
+# ### 7.1.2 The String format() Method
+# print('We are the {} who say "{}"!'.format('knights', 'Ni'))
+
+# ## a number in the brackets refers to position of the objects passed in
+# print('{0} and {1}'.format('spam', 'eggs'))
+# print('{1} and {0}'.format('spam', 'eggs'))
+
+# ## can also use keyword arguments
+# print('This {food} is {adjective}.'.format(food='spam', adjective='absolutely horrible'))
+
+# ## can arbitrarily combine the two
+# print('The story of {0}, {1}, and {other}.'.format('Bill', 'Manfred', other='George'))
+
+# ## can pass in a dict and use square brackets to access the keys
+# table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 8637678}
+# print('Jack: {0[Jack]:d}; Sjoerd: {0[Sjoerd]:d}; '
+#       'Dcab: {0[Dcab]:d}'.format(table))
+# ## can also use the ** notation
+# print('Jack: {Jack:d}; Sjoerd: {Sjoerd:d}; Dcab: {Dcab:d}'.format(**table))
+
+# for x in range(1, 11):
+#     print('{0:2d} {1:3d} {2:4d}'.format(x, x*x, x*x*x))
+
+# ### 7.1.3 Manual String Formatting
+# ## same table as above with squares and cubes, but formatted manually:
+# for x in range(1, 11):
+#     print(repr(x).rjust(2), repr(x*x).rjust(3), end = ' ')
+#     # note use of 'end' on previous line
+#     print(repr(x*x*x).rjust(4))
+
+# for x in range(1, 11):
+#     print(repr(x).center(2), repr(x*x).center(3), end = ' ')
+#     # note use of 'end' on previous line
+#     print(repr(x*x*x).center(4))
+
+# ## zfill pads 0s on the left, and understand + and - signs
+# '-3.14'.zfill(7)
+# for x in range(1, 11):
+#     print(repr(x).zfill(2), repr(x*x).zfill(3), end = ' ')
+#     # note use of 'end' on previous line
+#     print(repr(x*x*x).zfill(4))
+
+### 7.2 Reading and Writing Files (also JSON stuff)
+
+#### 8. Errors and Exceptiond
+## Syntax errors are also known as parsing errors, and happen before execution
+
+### 8.2 Exceptions
+## Errors detected during execution are exceptions
+
+### 8.3 Handling Exceptions
+# while True:
+#     try:
+#         x = int(input("Please enter a number: "))
+#         break
+#     except ValueError:
+#         print("Oops! That was no valid number. Try again...")
+
+# class B(Exception):
+#     pass
+
+# class C(B):             # subclass of B
+#     pass
+
+# class D(C):             # subclass of C
+#     pass
+
+# for cls in [B, C, D]:
+#     try:
+#         raise cls()
+#     except D:
+#         print("D")
+#     except C:
+#         print("C")
+#     except B:
+#         print("B")
+
+# ## a class in an except clause is compatible if it's the same or it's a base class thereof
+# for cls in [B, C, D]:
+#     try:
+#         raise cls()
+#     except B:           # each derived class will trigger this, so it will never hit the derived classes
+#         print("B")
+#     except D:
+#         print("D")
+#     except C:
+#         print("C")
