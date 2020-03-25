@@ -446,5 +446,9 @@
 
 ### 7.1.1 Formatted String Literals
 table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 7678}
+## passing an integer after the ':' makes the field that minimum number of characters wide:
 for name, phone in table.items():
     print(f'{name:10} ==> {phone:10d}')
+# >>> Sjoerd     ==>       4127
+# >>> Jack       ==>       4098
+# >>> Dcab       ==>       7678
