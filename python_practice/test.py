@@ -681,4 +681,210 @@
 # # divide(2, 0)
 # divide("2", "1")
 
-### 8.7 Predefined Clean-up Actions
+# ### 8.7 Predefined Clean-up Actions
+
+# ### 9.2.1. Scopes and Namespaces Example
+# ## How `global` and `nonlocal` affect variable binding:
+# def scope_test():
+#     def do_local():
+#         spam = 'local spam'
+        
+#     def do_nonlocal():
+#         nonlocal spam
+#         spam = 'nonlocal_spam'
+        
+#     def do_global():
+#         global spam
+#         spam = 'global spam'
+    
+#     spam = 'test spam'
+#     do_local()
+#     print('Ater local assignment:', spam)
+#     do_nonlocal()
+#     print('After nonlocal assignment:', spam)
+#     do_global()
+#     print('After global assignment:', spam)
+
+# scope_test()
+# print('In global scope:', spam)
+
+# # --------- below sections share classes ---------
+# ### 9.3.2. Class Objects
+# class MyClass:
+#     """A simple example class"""
+#     i = 12345
+
+#     def f(self):
+#         return 'hello world'
+
+# s = MyClass()
+# print(s.i)
+# print(s.f())
+
+# class Complex:
+#     def __init__(self, realpart, imagpart):
+#         self.r = realpart
+#         self.i = imagpart
+
+# x = Complex(3.0, -4.5)
+# print(x.r, x.i)
+
+# ### 9.3.3. Instance Objects
+# ## Only operations for instance objects are
+# ## `data attributes` (think instance variables) and `methods`
+# ## `Data atttributes` need not be declared; they are born when first assigned
+# x.counter = 1           # x is the instance above
+# while x.counter < 10:
+#     x.counter = x.counter * 2
+#     print(x.counter)
+# del x.counter
+
+# ### 9.3.4. Method Objects
+# print(s.f())
+# sf = s.f
+# if True:
+#     print(sf())
+# # --------- close shared classes ---------
+
+# ### 9.3.5. Class and Instance Variables
+# class Dog:
+#     kind = 'canine'             # class variable shared by all instances
+
+#     def __init__(self, name):
+#         self.name = name        # instance variable unique to each instance
+#         self.tricks = []        # important this is instance variable and not class
+
+#     def add_trick(self, trick):
+#         self.tricks.append(trick)
+
+# d = Dog('Fido')
+# e = Dog('Buddy')
+# d.add_trick('roll over')
+# e.add_trick('play dead')
+# print(d.kind)
+# print(e.kind)
+# print(d.name)
+# print(e.name)
+# print(d.tricks)
+# print(e.tricks)
+
+# ### 9.4. Random Notes
+# ## Data attributes (instance variables) override method attributes with same name
+# ## Functions can be defined outside and assigned to a local variable in a class
+# def f1(self, x, y):
+#     return min(x, x+y)
+
+# class C:
+#     f = f1
+    
+#     def g(self):
+#         return 'hello world'
+    
+#     h = g
+
+# inst = C()
+# print(inst.f(1, 2))
+# print(inst.h())
+
+# ## Methods may call other methods
+# class Bag:
+#     def __init__(self):
+#         self.data = []
+
+#     def add(self, x):
+#         self.data.append(x)
+    
+#     def addtwice(self, x):
+#         self.add(x)
+#         self.add(x)
+
+# b = Bag()
+# print(b.data)
+# b.add('one')
+# b.addtwice('two')
+# print(b.data)
+# print(b.__class__)
+
+
+# ### 9.5. Inheritance and Multiple Inheritance
+
+# ### 9.6. Private Variables (or lack thereof) and Name Mangling
+
+# ### 9.8. Iterators
+# for element in [1, 2, 3]:
+#     print(element)
+# for element in (1, 2, 3):
+#     print(element)
+# for key in {'one':1, 'two':2}:
+#     print(key)
+# for char in "123":
+#     print(char)
+# for line in open("workfile.txt"):
+#     print(line, end='')
+
+# ## BTS, `for` calls `iter()` on the container object, which returns an
+# ## iterator object that defines the method `__next__()`, which accesses
+# ## elements in the container one at a time. When no more, raises a
+# ## `StopIteration` exception which terminates the `for` loop. Below
+# ## is what is actually happening:
+# s = 'abc'
+# it = iter(s)
+# print(it)
+# print(next(it))
+# print(next(it))
+# print(next(it))
+# print(next(it))
+
+# ## Thus, we can easily add `__iter__` behavior to our classes
+# class Reverse:
+#     """Iterator for looping over a sequence backwards."""
+#     def __init__(self, data):
+#         self.data = data
+#         self.index = len(data)
+
+#     def __iter__(self):
+#         return self
+
+#     def __next__(self):
+#         if self.index == 0:
+#             raise StopIteration
+#         self.index = self.index - 1
+#         return self.data[self.index]
+
+# rev = Reverse('spam')
+# for char in rev:
+#     print(char)
+
+# print(rev.__class__)
+
+# ### 9.9. Generators
+# ## Tools for creating iterators
+# ## Written like regular functions, but use the `yield` statement to return data
+# ## `__next()__` resumes the generator where it left off
+# def reverse(data):
+#     for index in range(len(data)-1, -1, -1):
+#         yield data[index]
+
+# for char in reverse('golf'):
+#     print(char)
+
+### 9.10. Generator Expressions
+## Use parentheses instead of square brackets (used for liste comps)
+
+# print(sum(i*i for i in range(10)))                  # sum of squares
+
+# xvec = [10, 20, 30]
+# yvec = [7, 5, 3]
+# print(sum(x*y for x,y in zip(xvec, yvec)))           # dot product
+
+# from math import pi, sin
+# sine_table = {x: sin(x*pi/180) for x in range(9, 91)}
+# print(sine_table)
+
+# # unique_words = set(word for line in page for word in line_split())
+# # valedictorian = max((student.gpa, student.name) for student in graduates)
+
+# data = 'golf'
+# print(list(data[i] for i in range(len(data)-1, -1, -1)))
+
+# ## Wow, generator expressions are cool
