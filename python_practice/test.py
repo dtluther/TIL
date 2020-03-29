@@ -565,11 +565,120 @@
 ## The else cause is better than adding to to the try clause because it avoids
 ## accidentally catching an exception that wasn't raised by the code being protected
 ## by the try... except statement.
-for arg in sys.argv[1:]:
-    try:
-        f = open(arg, 'r')
-        except OSError:
-            print('cannot open', arg)
-        else:
-            print(arg, 'has', len(f.readlines()), 'lines')
-            f.close()
+# import sys
+
+# for arg in sys.argv[1:]:
+#     try:
+#         f = open(arg, 'r')
+#     except OSError:
+#         print('cannot open', arg)
+#     else:
+#         print(arg, 'has', len(f.readlines()), 'lines')
+#         f.close()
+
+# try:
+#     raise Exception('spam', 'eggs')
+# except Exception as inst:
+#     print(type(inst))    # the exception instance
+#     print(inst.args)     # arguments stored in .args
+#     print(inst)          # __str__ allows args to be printed directly,
+#                          # but may be overridden in exception subclasses
+#     x, y = inst.args     # unpack args
+#     print('x =', x)
+#     print('y =', y)
+
+# ## exception handlers can allso handle exceptions that occur inside functions
+# def this_fails():
+#     x = 1/0
+
+# try:
+#     this_fails()
+# except ZeroDivsionError as err:
+#     print('Handling run-time error:', err)
+
+# ### 8.4 Raising Exceptions
+# ## raise allows the forcing of a specified exception
+# # raise NameError('HiThere')
+
+# ## argument passed must be either an exception instance or exception class (class
+# ## that derives from Exception)
+# # raise ValueError # shorthand for 'raise ValueError()'
+
+# ## If you need to determine whether an exception was raised but don’t intend to
+# ## handle it, a simpler form of the raise statement allows you to 
+# ## re-raise the exception:
+# try:
+#     raise NameError('HiThere')
+# except NameError:
+#     print('An exception flew by!')
+#     raise
+
+# ### 8.5 User-defined Exceptions
+# class Error(Exception):
+#     """Base class for exceptions in this module."""
+#     pass
+
+# class InputError(Error):
+#     """Exception raised for errors in the input.
+
+#     Attributes:
+#         expression -- inut expression in which the error occurred
+#         mesage -- explanation of the error
+#     """
+
+#     def __init__(self, expression, message):
+#         self.expression = expression
+#         self.message = message
+
+# class TransitionError(Error):
+#     """Raised when an operation attempts a state transition that's not
+#     allowed.
+
+#     Attributes:
+#         previous -- state at beginning of transition
+#         next -- attempted new state
+#         message -- explanation of why the specific transition is not allowed
+#     """
+
+#     def __init__(self, previous, next, message):
+#         self.previous = previous
+#         self.next = next
+#         self.message = message
+
+### 8.6 Defining Clean-up Actions
+## A 'finally' clause will execute as the last task before the try statement completes
+## It runs whether or not the try produces an exception
+## Complex cases:
+    ## If an exception is not handled by an 'except', the exception is re-raised after the 'finally' executes
+    ## An exception could occur during 'except' or 'else', and it will be re-raised after 'finally'
+    ## If there is a 'break', 'continue', or 'return', the 'finally' will execute just prior to it
+    ## If a 'finally' includes a 'return', that return will override the a 'return' from the 'try'
+    
+# try:
+#     raise KeyboardInterrupt
+# finally:
+#     print('Goodbye, world!')
+
+# def bool_return():
+#     try:
+#         return True
+#     finally:
+#         return False
+
+# print(bool_return())
+
+# def divide(x, y):
+#     try:
+#         result = x / y
+#     except ZeroDivisionError:
+#         print("division by zero!")
+#     else:
+#         print("result is", result)
+#     finally:
+#         print("executing finally clause")
+
+# # divide(2, 1)
+# # divide(2, 0)
+# divide("2", "1")
+
+### 8.7 Predefined Clean-up Actions
