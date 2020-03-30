@@ -888,3 +888,93 @@
 # print(list(data[i] for i in range(len(data)-1, -1, -1)))
 
 # ## Wow, generator expressions are cool
+
+# #### 10. Brief Tour of the Standard Library
+# ### 10.1. Operating System Interface
+# >>> import os
+# >>> os.getcwd()      # Return the current working directory
+# 'C:\\Python37'
+# >>> os.chdir('/server/accesslogs')   # Change current working directory
+# >>> os.system('mkdir today')   # Run the command mkdir in the system shell
+# 0
+
+# ## Be sure to use the `import os` style instead of `from os import *`.
+# ## This will keep `os.open()` from shadowing the built-in `open()` function
+# ## which operates much differently.
+# >>> import os
+# >>> dir(os)
+# <returns a list of all module functions>
+# >>> help(os)
+# <returns an extensive manual page created from the module's docstrings>
+
+# ## `shututil`
+# >>> import shutil
+# >>> shutil.copyfile('data.db', 'archive.db')
+# 'archive.db'
+# >>> shutil.move('/build/executables', 'installdir')
+# 'installdir'
+
+# ### 10.2. File Wildcards
+# ## The `glob` module 
+# >>> import glob
+# >>> glob.glob('*.py')
+# ['primes.py', 'random.py', 'quote.py']
+
+# ### 10.3. Command Line Arguments
+# >>> import sys
+# >>> print(sys.argv)
+
+# ### 10.4. Error Output Redirection and Program Termination
+# ## `stdin`, `stdout`, `stderr`
+# ## useful for emitting warnings and error messages to make them visible even when stdout has been redirected:
+# >>> sys.stderr.write('Warning, log file not found starting a new one\n')
+# Warning, log file not found starting a new one
+
+### 10.5. String Pattern Matching, Regular Expression
+
+# ### 10.6. Mathematics
+# ## The `math` module gives access to the underlying C library for floating point math:
+# >>> import math
+# >>> math.cos(math.pi / 4)
+# 0.70710678118654757
+# >>> math.log(1024, 2)
+# 10.0
+
+# ## `random` provides tools for making random selections:
+# >>> import random
+# >>> random.choice(['apple', 'pear', 'banana'])
+# 'apple'
+# >>> random.sample(range(100), 10)   # sampling without replacement
+# [30, 83, 16, 4, 8, 81, 41, 50, 18, 33]
+# >>> random.random()    # random float
+# 0.17970987693706186
+# >>> random.randrange(6)    # random integer chosen from range(6)
+# 4
+
+# ## `statistics`
+# >>> import statistics
+# >>> data = [2.75, 1.75, 1.25, 0.25, 0.5, 1.25, 3.5]
+# >>> statistics.mean(data)
+# 1.6071428571428572
+# >>> statistics.median(data)
+# 1.25
+# >>> statistics.variance(data)
+# 1.3720238095238095
+
+# ### 10.7. Internet Access
+# from urllib.request import urlopen
+# with urlopen('https://www.python.org/') as response:
+#     for line in response:
+#         line = line.decode('utf-8')  # Decoding the binary data to text.
+#         print(line)
+
+### 10.8. Dates and Times
+
+### 10.9. Data Compression
+
+### 10.10. Performance Measurement
+from timeit import Timer
+print(Timer('t=a; a=b; b=t', 'a=1; b=2').timeit())      # tuple unpacking
+print(Timer('a,b = b,a', 'a=1; b=2').timeit())          # argument swapping
+
+### 10.11. Quality Control and Testing
