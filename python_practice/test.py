@@ -968,13 +968,69 @@
 #         line = line.decode('utf-8')  # Decoding the binary data to text.
 #         print(line)
 
-### 10.8. Dates and Times
+# ### 10.8. Dates and Times
 
-### 10.9. Data Compression
+# ### 10.9. Data Compression
 
-### 10.10. Performance Measurement
-from timeit import Timer
-print(Timer('t=a; a=b; b=t', 'a=1; b=2').timeit())      # tuple unpacking
-print(Timer('a,b = b,a', 'a=1; b=2').timeit())          # argument swapping
+# ### 10.10. Performance Measurement
+# from timeit import Timer
+# print(Timer('t=a; a=b; b=t', 'a=1; b=2').timeit())      # tuple unpacking
+# print(Timer('a,b = b,a', 'a=1; b=2').timeit())          # argument swapping
 
-### 10.11. Quality Control and Testing
+# ### 10.11. Quality Control and Testing
+
+# #### 11. ABrief Tour of the Standard Library —— Part II
+# ### 11.1. Output Formatting
+# ## Modules `reprlib`, `pprint`, `textwrap`, `locale`
+
+# ### 11.2. Templating
+# ## `string.Template` (from `string` import `Template`)
+# ## A batch renaming utility for photos, with custome delimiter:
+# >>> import time, os.path
+# >>> photofiles = ['img_1074.jpg', 'img_1076.jpg', 'img_1077.jpg']
+# >>> class BatchRename(Template):
+# ...     delimiter = '%'
+# >>> fmt = input('Enter rename style (%d-date %n-seqnum %f-format):  ')
+# Enter rename style (%d-date %n-seqnum %f-format):  Ashley_%n%f
+
+# >>> t = BatchRename(fmt)
+# >>> date = time.strftime('%d%b%y')
+# >>> for i, filename in enumerate(photofiles):
+# ...     base, ext = os.path.splitext(filename)
+# ...     newname = t.substitute(d=date, n=i, f=ext)
+# ...     print('{0} --> {1}'.format(filename, newname))
+
+# img_1074.jpg --> Ashley_0.jpg
+# img_1076.jpg --> Ashley_1.jpg
+# img_1077.jpg --> Ashley_2.jpg
+
+# ### 11.3. Working with Binary Data Record Layouts
+
+# ### 11.4. Multi-threading
+
+# ### 11.5. Logging
+
+# ### 11.6. Weak References
+
+# ### 11.7. Tools for Working with Lists
+# ## Modules `array`, `collections.deque`, `bisect`, `heapq`
+
+# ### 11.8. Decimal Floating Point Arithmetic
+# ## Useful for legal, financial, or other applications which require
+# ## exact decimal representation or calculations where the user expects
+# ## the results to match calculations done by hand.
+# from decimal import *
+# print(round(Decimal('0.70') * Decimal('1.05'), 2))
+# # Decimal('0.74')
+# print(round(0.70 * 1.05, 2))
+# # 0.73
+
+# # >>> Decimal('1.00') % Decimal('.10')
+# # Decimal('0.00')
+# # >>> 1.00 % 0.10
+# # 0.09999999999999995
+
+# # >>> sum([Decimal('0.1')]*10) == Decimal('1.0')
+# # True
+# # >>> sum([0.1]*10) == 1.0
+# # False
