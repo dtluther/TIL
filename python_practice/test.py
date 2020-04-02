@@ -1034,3 +1034,6 @@
 # # True
 # # >>> sum([0.1]*10) == 1.0
 # # False
+
+#### 12. Virtual Environments and Packages (cool and useful)
+#### See the venv_test dir
