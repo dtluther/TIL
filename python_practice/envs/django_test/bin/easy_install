@@ -1,4 +1,4 @@
-#!/Users/lex/Documents/coding/til/python_practice/environments/django_test/bin/python
+#!/Users/lex/Documents/coding/til/python_practice/envs/django_test/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
