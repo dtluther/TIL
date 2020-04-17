@@ -77,13 +77,20 @@ def lengthOfLongestSubstring(s):
 	seen = {}
 	longest = 0
 	current = 0
+	last_dup_idx = 0
 	for idx, char in enumerate(s):
 		if char in seen:
-			first = seen[char]
+			prev_idx = seen[char]
 			seen[char] = idx
-			if (idx-first) > longest:
-				current = idx - first
-			print(f"if: {seen}, {longest}, {current}")
+			if prev_idx >= last_dup_idx:
+				last_dup_idx = prev_idx
+				current = idx - prev_idx
+				print(f"if/if: {seen}, {longest}, {current}")
+			else:
+				current += 1
+				if current > longest:
+					longest = current
+				print(f"if/else: {seen}, {longest}, {current}")
 		else:
 			seen[char] = idx
 			current += 1
