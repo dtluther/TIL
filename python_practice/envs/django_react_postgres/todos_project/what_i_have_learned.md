@@ -54,9 +54,10 @@ I'll do a quick summary of the steps I followed to create my Todo List app. I fo
       ```
    3. `npm init -y` in top level project directory to create `package.json` file
       * So `package.json`, `frontend/`, `todo_list/`, and `todos_project/` are at same level in file tree
-   3. Packages (optional in [])
+   6. Packages (optional in [])
       * `npm i -D webpack webpack-cli`
       * `npm i -D babel-loader @babel/core @babel/preset-env @babel/preset-react [@babel/plugin-proposal-class-properties]`
       * `npm i react react-dom react-router-dom`
       * `npm i redux react-redux redux-thunk redux-devtools-extension`
       * `npm i redux-form`
+   5. `.babelrc`
