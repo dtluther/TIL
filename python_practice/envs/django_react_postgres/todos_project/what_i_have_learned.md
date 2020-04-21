@@ -36,17 +36,22 @@ I'll do a quick summary of the steps I followed to create my Todo List app. I fo
 3. Setup the Django admin interface (not a requirement, but useful). Followed https://scotch.io/tutorials/build-a-to-do-application-using-django-and-react here exactly.
 4. Next up is APIs. I found other helpful looking tutorials (https://learndjango.com/tutorials/official-django-rest-framework-tutorial-beginners because I was looking up the Python package `djangorestframework` because it appeared in all the tutorials except the django docs one, and https://medium.com/technest/build-a-crud-todo-app-with-django-and-react-redux-8ddb0b6ac2f0 because I thought I should probably use redux again). But we didn't cover APIs in Django docs, so maybe this `djangorestframework` is necessary for all of it.
 5. **Serializers**: transform model instances to JSON so the frontend can easily use the JSON response.
-   1. 
-
-6. URLs and routers
-   1. made urls.py file in the todo_list app (there is an existing top level urls.py file in the project directory)
-   2. use the router here
-   3. wire up the urls into the top level url file using include
+   1. Make a `serializers.py` file in `todo_list/`.
+   2. Make a `TodoSerializer` that inherits from `serializers.ModelSerializers`.
+   3. Make `Meta` subclass under the `TodoSerializer`, and specifie the model to work with and the fields we want converted to JSON.
+6. `todo_list/views.py`
+   1. Import `viewsets` from `rest_framework`
+      * `viewsets` provide default CRUD implementation, we just need to specify the serializer
+7. URLs and router
+   1. Create a URLconf (URL configuration) file use `rest_framework.routers` to register the `TodoViewSet` to the router.
+      * Then, `urlpatterns = routers.urls`
+   2. In the top level `todos_project/urls.py`, Structure these routes under a path with `...api/`
+      * Can now got to `.../api/todos` and `.../api/todos/<id>`
 
 ***NOTE***: started using https://medium.com/technest/build-a-crud-todo-app-with-django-and-react-redux-8ddb0b6ac2f0 predominantly when frontend began because I didn't want to use `create-react-app` as used in https://scotch.io/tutorials/build-a-to-do-application-using-django-and-react.
 
-7. Frontend (following from https://medium.com/technest/build-a-crud-todo-app-with-django-and-react-redux-8ddb0b6ac2f0)
-   1. Run `python manage.py startapp frontend
+8. Frontend (following from https://medium.com/technest/build-a-crud-todo-app-with-django-and-react-redux-8ddb0b6ac2f0)
+   1. Run `python manage.py startapp frontend`
    2. Set up react/redux with the directories we want:
       ```
       mkdir -p ./frontend/src/{components,actions,reducers}
@@ -64,10 +69,16 @@ I'll do a quick summary of the steps I followed to create my Todo List app. I fo
    6. Create `webpack.config.js`
    7. Edit scripts file in `package.json`
       * This creates scripts for `npm run dev` and `npm run build`, which both have webpack bundle the modules and output the `main.js` file for the respective environments.
-   8. create first react files
-      1. index.js
-      2. app.js
-      3. index.html in template frontend
-         * in order for this file to be accessible, we need frontend views and frontend urls, and then we wire up the url in the project urls.py
+   8. React:
+      **NOTE**: in the tutorial, they created a separate frontend app to run all this stuff through. will check later if it's possible to do through just the backend url and views.
+      * Since we are creating a new app (`python manage.py startapp frontend`), we will need to include the new app in the `INSTALLED_APPS` (in `settings.py`).
+      Create the first react files:
+      1. `frontend/src/index.js`
+         *  This is where we'll connect from React to Python
+      2. Create template file in frontend `frontend/templates/frontend/index.html`, and put `<div>` element with `root=id`.
+         * In the `index.js` file, this line allows us to hook the React component we will create (`App.js`) to the HTML template: `ReactDOM.render(<App />, document.getElementById('root'));`
+      3. `frontend/src/app.js`:
+         *  Create parent react componenet `App` and export it at the end of the file
+      4. `templates/frontend/index.html`
 
-         got stuck, ended uo having to add frontend to the installed apps
+   At this point, was able to load `http://localhost:8000/` and see the DOM from `App.js`
