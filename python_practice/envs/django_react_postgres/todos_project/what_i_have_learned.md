@@ -45,7 +45,7 @@ I'll do a quick summary of the steps I followed to create my Todo List app. I fo
 
 ***NOTE***: started using https://medium.com/technest/build-a-crud-todo-app-with-django-and-react-redux-8ddb0b6ac2f0 predominantly when frontend began because I didn't want to use `create-react-app` as used in https://scotch.io/tutorials/build-a-to-do-application-using-django-and-react.
 
-7. Frontend
+7. Frontend (following from https://medium.com/technest/build-a-crud-todo-app-with-django-and-react-redux-8ddb0b6ac2f0)
    1. Run `python manage.py startapp frontend
    2. Set up react/redux with the directories we want:
       ```
@@ -60,4 +60,14 @@ I'll do a quick summary of the steps I followed to create my Todo List app. I fo
       * `npm i react react-dom react-router-dom`
       * `npm i redux react-redux redux-thunk redux-devtools-extension`
       * `npm i redux-form`
-   5. `.babelrc`
+   5. Create `.babelrc` which enables us to use `Async/Await`
+   6. Create `webpack.config.js`
+   7. Edit scripts file in `package.json`
+      * This creates scripts for `npm run dev` and `npm run build`, which both have webpack bundle the modules and output the `main.js` file for the respective environments.
+   8. create first react files
+      1. index.js
+      2. app.js
+      3. index.html in template frontend
+         * in order for this file to be accessible, we need frontend views and frontend urls, and then we wire up the url in the project urls.py
+
+         got stuck, ended uo having to add frontend to the installed apps

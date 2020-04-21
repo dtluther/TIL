@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'todo_list.apps.TodoListConfig', # activate the app (name comes from `todo_list/apps.py`)
     'rest_framework', # add this when begin APIs
+    'frontend.apps.FrontendConfig', # activate the frontend
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
