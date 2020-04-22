@@ -14,6 +14,7 @@ I ended up having postgres installed in two locations. I'm not sure if this was 
 ### Django process
 I'll do a quick summary of the steps I followed to create my Todo List app. I followed a mixture of tutorials, ordered respectively by how much I used them: https://scotch.io/tutorials/build-a-to-do-application-using-django-and-react, https://docs.djangoproject.com/en/3.0/intro/tutorial01/, https://djangocentral.com/using-postgresql-with-django/, https://tutorial-extensions.djangogirls.org/en/optional_postgresql_installation/, and https://www.valentinog.com/blog/drf/.
 
+#### Backend/APIs
 1. There was actually quite a bit of confusion from a file structure perspective between two of the main project tutorials (https://scotch.io/tutorials/build-a-to-do-application-using-django-and-react and https://www.valentinog.com/blog/drf/) and which commands to use (`python manage.py startapp [app_name]` vs `django-admin startapp [app_name]`), but I ended up using the first tutorial, because it aligned with the Django docs.
 2. Basically followed everything from this tutorial to setup postgres with django, except for `ENGINE` I didn't include "psycopg2" at the end, so my opening line in `settings.py` was: `'ENGINE': 'django.db.backends.postgresql'`.
    * It took a while to figure out whether I should run `python manage.py migrate` right after editing these settings, because the order in the official Django docs tutorial (https://docs.djangoproject.com/en/3.0/intro/tutorial01/) does stuff with views first. But I realized I haven't set up my other personal projects with views first, and I wanted to make sure the database was working, so I ran the migration and it didn't fail, so I was in the clear.
@@ -50,7 +51,8 @@ I'll do a quick summary of the steps I followed to create my Todo List app. I fo
 
 ***NOTE***: started using https://medium.com/technest/build-a-crud-todo-app-with-django-and-react-redux-8ddb0b6ac2f0 predominantly when frontend began because I didn't want to use `create-react-app` as used in https://scotch.io/tutorials/build-a-to-do-application-using-django-and-react.
 
-8. Frontend (following from https://medium.com/technest/build-a-crud-todo-app-with-django-and-react-redux-8ddb0b6ac2f0)
+#### Frontend/React
+1. Introduce npm, react, etc. (following from https://medium.com/technest/build-a-crud-todo-app-with-django-and-react-redux-8ddb0b6ac2f0)
    1. Run `python manage.py startapp frontend`
    2. Set up react/redux with the directories we want:
       ```
@@ -65,6 +67,8 @@ I'll do a quick summary of the steps I followed to create my Todo List app. I fo
       * `npm i react react-dom react-router-dom`
       * `npm i redux react-redux redux-thunk redux-devtools-extension`
       * `npm i redux-form`
+      * `npm i axios`
+      * `npm i lodash`
    5. Create `.babelrc` which enables us to use `Async/Await`
    6. Create `webpack.config.js`
    7. Edit scripts file in `package.json`
@@ -82,3 +86,16 @@ I'll do a quick summary of the steps I followed to create my Todo List app. I fo
       4. `templates/frontend/index.html`
 
    At this point, was able to load `http://localhost:8000/` and see the DOM from `App.js`
+
+2. Redux
+   1. Actions (and Action Creators)
+   2. Reducers
+      1. Also a parent reducer where we `combineReducers`. This is where we need to include the `redux-form` reducer.
+   3. Store: an object that holds the state of the application
+      1. Use recommended middleware `redux-thunk` for async logic
+         1. Learn to use Redux DevTools
+   4. Components
+      * Tutorial has `mapStateToProps` and `connect()` function in the component. I think I used to do this in a dispatcher file.
+      1. Make TodoList
+      2. Make Dashboard
+      3. Update `app.js` to include the provider and store, and put the top level component (in this case the dashbaord) in the provider. The provider makes the store available to the component nested inside of it.
