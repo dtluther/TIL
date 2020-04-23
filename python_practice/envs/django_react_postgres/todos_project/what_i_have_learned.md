@@ -80,19 +80,22 @@ I'll do a quick summary of the steps I followed to create my Todo List app. I fo
       1. `frontend/src/index.js`
          *  This is where we'll connect from React to Python
       2. Create template file in frontend `frontend/templates/frontend/index.html`, and put `<div>` element with `root=id`.
-         * In the `index.js` file, this line allows us to hook the React component we will create (`App.js`) to the HTML template: `ReactDOM.render(<App />, document.getElementById('root'));`
+         * In the `index.js` file, this line allows us to hook the React component we will create (`app.js`) to the HTML template: `ReactDOM.render(<App />, document.getElementById('root'));`
       3. `frontend/src/app.js`:
          *  Create parent react componenet `App` and export it at the end of the file
       4. `templates/frontend/index.html`
 
-   At this point, was able to load `http://localhost:8000/` and see the DOM from `App.js`
+   At this point, was able to load `http://localhost:8000/` and see the DOM from `app.js`
 
 2. Redux
    1. Actions (and Action Creators)
-   2. Reducers
-      1. Also a parent reducer where we `combineReducers`. This is where we need to include the `redux-form` reducer.
-   3. Store: an object that holds the state of the application
-      1. Use recommended middleware `redux-thunk` for async logic
+      * **Actions** are payloads of information that send data from the app to the store (def from Redux docs), and they are just POJOs.
+      * **Action Creators** are, thus, functions that return actions.
+        * This means that they just return the POJOs. The fact that we are automatically dispatching the action in our action creator function means we are actually returning a **Bound Action Creator** (https://redux.js.org/basics/actions/).
+   2. **Reducers**: specify how the application's in response to actions sent ot the store (https://redux.js.org/basics/reducers).
+      1. We need to make sure to make a parent reducer (`root_reducer.js`)where we can implement `combineReducers` to combine all the reducers. In order to use the `redux-form` package, we want to include its reducer in the `combineReducers` function.
+   3. **Store**: an object that holds the state of the application.
+      1. Use recommended middleware `redux-thunk` for async logic (learn why thunks are important)
          1. Learn to use Redux DevTools
    4. Components
       * Tutorial has `mapStateToProps` and `connect()` function in the component. I think I used to do this in a dispatcher file.
