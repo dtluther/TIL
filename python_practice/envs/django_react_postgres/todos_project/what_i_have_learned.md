@@ -102,3 +102,9 @@ I'll do a quick summary of the steps I followed to create my Todo List app. I fo
       1. Make TodoList
       2. Make Dashboard
       3. Update `app.js` to include the provider and store, and put the top level component (in this case the dashbaord) in the provider. The provider makes the store available to the component nested inside of it.
+3. More Frontend stuff
+   1. `ADD_TODO`
+      1. action creator
+      2. reducer
+      3. form component
+         1. find out how redux form works (https://redux-form.com/)

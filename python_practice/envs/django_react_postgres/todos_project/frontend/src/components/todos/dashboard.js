@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
 import TodoList from './todo_list';
+import TodoCreate from './todo_create';
 
 class Dashboard extends Component {
     render() {
@@ -7,6 +8,7 @@ class Dashboard extends Component {
             <div className='ui container'>
                 <div>Todo Create Form</div>
                 <TodoList />
+                <TodoCreate />
             </div>
         );
     }

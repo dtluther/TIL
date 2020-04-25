@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { GET_TODOS } from './types';
+import { reset } from 'redux-form';
+import { GET_TODOS, ADD_TODO } from './types';
 
 // GET TODOS
 export const getTodos = () => async dispatch => {
@@ -8,4 +9,14 @@ export const getTodos = () => async dispatch => {
         type: GET_TODOS,
         payload: res.data
     });
+};
+
+// ADD TODO
+export const addTodo = formValues => async dispatch => {
+    const res = await axios.get('/api/todos/', { ...formValues });
+    dispatch({
+        type: ADD_TODO,
+        payload: res.data
+    });
+    dispatch(reset('todoForm')); // this clears the form after submission succeeeds
 };

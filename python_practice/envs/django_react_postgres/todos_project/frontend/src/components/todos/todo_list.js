@@ -14,7 +14,7 @@ class TodoList extends Component {
                     <div className='item' key={todo.id}>
                         <i className='large calendar outline middle aligned icon' />
                         <div className='content'>
-                            <a className='header'>{todo.task}</a>
+                            <a className='header'>{todo.title}</a>
                             <div className='description'>{todo.created_at}</div>
                         </div>
                     </div>
