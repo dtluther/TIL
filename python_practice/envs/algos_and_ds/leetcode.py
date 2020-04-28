@@ -19,11 +19,11 @@
 
 # print(twoSum([2, 7, 11, 15], 9))
 
-# 2) Add Two Numbers
-class ListNode:
-	def __init__(self, x):
-		self.val = x
-		self.next = None
+# # 2) Add Two Numbers
+# class ListNode:
+# 	def __init__(self, x):
+# 		self.val = x
+# 		self.next = None
 
 # l1 = ListNode(2)
 # l1.next = ListNode(4)
@@ -72,39 +72,39 @@ class ListNode:
 # result = x.addTwoNumbers(list1, list2)
 # print(f"{result.val} -> {result.next.val} -> {result.next.next.val}")
 
-# 3) Longest Substring Without Repeating Characters
-def lengthOfLongestSubstring(s):
-	seen = {}
-	longest = 0
-	current = 0
-	last_dup_idx = 0
-	for idx, char in enumerate(s):
-		if char in seen:
-			prev_idx = seen[char]
-			seen[char] = idx
-			if prev_idx >= last_dup_idx:
-				last_dup_idx = prev_idx
-				current = idx - prev_idx
-				print(f"if/if: {seen}, {longest}, {current}")
-			else:
-				current += 1
-				if current > longest:
-					longest = current
-				print(f"if/else: {seen}, {longest}, {current}")
-		else:
-			seen[char] = idx
-			current += 1
-			if current > longest:
-				longest = current
-			print(f"else: {seen}, {longest}, {current}")
+# # 3) Longest Substring Without Repeating Characters
+# def lengthOfLongestSubstring(s):
+# 	seen = {}
+# 	longest = 0
+# 	current = 0
+# 	last_dup_idx = 0
+# 	for idx, char in enumerate(s):
+# 		if char in seen:
+# 			prev_idx = seen[char]
+# 			seen[char] = idx
+# 			if prev_idx >= last_dup_idx:
+# 				last_dup_idx = prev_idx
+# 				current = idx - prev_idx
+# 				print(f"if/if: {seen}, {longest}, {current}")
+# 			else:
+# 				current += 1
+# 				if current > longest:
+# 					longest = current
+# 				print(f"if/else: {seen}, {longest}, {current}")
+# 		else:
+# 			seen[char] = idx
+# 			current += 1
+# 			if current > longest:
+# 				longest = current
+# 			print(f"else: {seen}, {longest}, {current}")
 
-	return longest
+# 	return longest
 
-print(lengthOfLongestSubstring('abcabcbb'))
-print(lengthOfLongestSubstring('aab'))
-print(lengthOfLongestSubstring('dvdf'))
-print(lengthOfLongestSubstring('pwwkew'))
-print(lengthOfLongestSubstring('tmmzuxt'))
+# print(lengthOfLongestSubstring('abcabcbb'))
+# print(lengthOfLongestSubstring('aab'))
+# print(lengthOfLongestSubstring('dvdf'))
+# print(lengthOfLongestSubstring('pwwkew'))
+# print(lengthOfLongestSubstring('tmmzuxt'))
 
 # 4) Median of Two Sorted Arrays
 
