@@ -15,6 +15,7 @@ class TodoForm extends Component {
     };
 
     onSubmit = formValues => {
+        debugger;
         this.props.onSubmit(formValues);
     };
 
