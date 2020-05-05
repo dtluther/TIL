@@ -83,7 +83,7 @@ DATABASES = {
         'USER': 'user01',
         'PASSWORD': 'test1234',
         'HOST': '127.0.0.1', # apparently can also use 'localhost'
-        'PORT': '', # default is 5432
+        'PORT': '5432', # default is 5432
     }
 }
 

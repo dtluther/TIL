@@ -3,13 +3,43 @@ What I Have Learned
 A quick summary of things to outline some takeaways
 -----
 
-### PostGresSQL
+### PostGresSQL Issues
 Installing this was a b****!
-#### The original problem
-I was having was that I was not able to open the postgres shell. Permission was denied (which I had saved the error), but I basically couldn't get into the shell using either of the following commands: `psql postgres` or `sudo -u postgres psql`. Apparently there's a default user postgres that just gets created when you brew install, but I didn't have access to this.
+Edit after encountering problem 2: Postgres can just be a b**** in and of itself!
+1. Problem during installation
+   #### Problem description:
+   I was having was that I was not able to open the postgres shell. Permission was denied (which I had saved the error), but I basically couldn't get into the shell using either of the following commands: `psql postgres` or `sudo -u postgres psql`. Apparently there's a default user postgres that just gets created when you brew install, but I didn't have access to this.
 
-#### Summary of solution
-I ended up having postgres installed in two locations. I'm not sure if this was from mistakes in installing it (I tried both the web download and using homebrew) or if it was from a previous download on my computer that I forgot about, but it was in two locations. The second location that took a while to find was `/usr/local/tmp/postgres`, iirc. I went to remove that folder, and turns out I didn't have permission to do that. Somehow there was another user on my computer (named **postgres**) that had access to it. Before using sudo to destroy the directory, we wanted to see if fixing things in there would allow it to work. there was some file with the port 5432 and another lock file for that that was creating some error at that point. Ended up deleting those, still couldn't open the shell, and so we ended up just `sudo` removing those files, and then starting over with `brew install postgres` and it worked.
+   #### Summary of solution:
+   I ended up having postgres installed in two locations. I'm not sure if this was from mistakes in installing it (I tried both the web download and using homebrew) or if it was from a previous download on my computer that I forgot about, but it was in two locations. The second location that took a while to find was `/usr/local/tmp/postgres`, iirc. I went to remove that folder, and turns out I didn't have permission to do that. Somehow there was another user on my computer (named **postgres**) that had access to it. Before using sudo to destroy the directory, we wanted to see if fixing things in there would allow it to work. there was some file with the port 5432 and another lock file for that that was creating some error at that point. Ended up deleting those, still couldn't open the shell, and so we ended up just `sudo` removing those files, and then starting over with `brew install postgres` and it worked.
+
+2. Problem when I was on a new ip address for the first time (CA -> AZ)
+	* NOTE: I don't know if the IP address is related to the problem at all, but it's one of the only distinctions I could make at the time.
+   #### Problem description:
+   This occurred midway through the project. I ran `python manage.py runserver` to get the server up and running os I could open the webpage, and I got this new error I hadn't seen before:
+   	```
+   	File "/Users/lex/Documents/coding/til/python_practice/envs/django_react_postgres/lib/python3.7/site-packages/psycopg2/__init__.py", line 127, in connect
+       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+   django.db.utils.OperationalError: could not connect to server: Connection refused
+   	Is the server running on host "127.0.0.1" and accepting
+   	TCP/IP connections on port 5432?
+   	```
+   
+   #### Summary of Solution
+   Found this link: https://stackoverflow.com/questions/29937378/django-db-utils-operationalerror-could-not-connect-to-server
+     * Tried option 1 and 2, didn't seem to have postgres running
+     * For option 3, nothing had changed in my database
+     * Tried option 4. The command `pg_resetxlog` was was no longer supported on this version of postgres (12.2 I believe), so found the updated command `pg_resetwal` instead:
+         ```
+         ❯ pg_resetwal -f usr/local/var/postgres
+         pg_resetwal: error: lock file "postmaster.pid" exists
+         pg_resetwal: Is a server running?  If not, delete the lock file and try again.
+         ```
+
+      * Turns out I missed a step in step 4! I didn't remove the `postmaster.pid` file. After removing that, and then running the `pg_resetwal ...` command again, I was able to restart postgres with `brew services restart postgres` and start the Python server with `python manage.py runserver` and it worked.
+
+   #### What actually happened?
+   From that extremley helpful Stack Overflow, what I think happened was an improper shutdown, and thus the `postmaster.pid` file didn't get deleted? Because that file existed, my system thought postgres was running even when it wasn't. So when I would run `brew services start postgresql`, it would say it was already running, but when I would grep for postgres (`ps -ef | grep postgres`), I couldn't find a process. By removing that file and "resetting the write-ahead log and other control information" (`ps_resetwal` command), I could then start postgres again.
 
 ### Django process
 I'll do a quick summary of the steps I followed to create my Todo List app. I followed a mixture of tutorials, ordered respectively by how much I used them: https://scotch.io/tutorials/build-a-to-do-application-using-django-and-react, https://docs.djangoproject.com/en/3.0/intro/tutorial01/, https://djangocentral.com/using-postgresql-with-django/, https://tutorial-extensions.djangogirls.org/en/optional_postgresql_installation/, and https://www.valentinog.com/blog/drf/.
