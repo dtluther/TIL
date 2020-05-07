@@ -7,6 +7,7 @@ import Dashboard from './todos/dashboard';
 import Header from './layout/header';
 import history from '../history';
 import TodoDelete from './todos/todo_delete';
+import TodoEdit from './todos/todo_edit';
 
 class App extends Component {
     render() {
@@ -17,6 +18,7 @@ class App extends Component {
                     <Switch>
                         <Route exact path='/' component={Dashboard} />
                         <Route exact path='/delete/:id' component={TodoDelete} />
+                        <Route exact path='/edit/:id' component={TodoEdit} />
                     </Switch>
                 </Router>
             </Provider>

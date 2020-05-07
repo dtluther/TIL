@@ -140,7 +140,7 @@ I'll do a quick summary of the steps I followed to create my Todo List app. I fo
          1. find out how redux form works (https://redux-form.com/)
    2. Created a header under layout (non-functional for this tutorial)
       * added this header to `app.js`
-   3. Removing Todos
+   3. Removing Todos `DELETE_TODO`
       1. create a history object
          * used for changing current location, we will use this after deleteing a todo
       2. actions
@@ -149,4 +149,10 @@ I'll do a quick summary of the steps I followed to create my Todo List app. I fo
       4. delete todo modal
          * put this in the todo list component
    4. Configure react router in `app.js`
+   5. Editing Todos `EDIT_TODO`
+      1. action creator
+      2. reducer
+      3. `todo_edit.js`
+         * add component and route to `app.js`
+         * update `btnText` to be conditional in the `todo_form`.
 

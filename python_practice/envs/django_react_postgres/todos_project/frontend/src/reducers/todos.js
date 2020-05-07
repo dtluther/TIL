@@ -1,5 +1,11 @@
 import _ from 'lodash';
-import { GET_TODOS, ADD_TODO, GET_TODO, DELETE_TODO } from '../actions/types';
+import {
+    GET_TODOS,
+    ADD_TODO,
+    GET_TODO,
+    DELETE_TODO,
+    EDIT_TODO
+} from '../actions/types';
 
 export default (state = {}, action) => {
     // Object.freeze(state); # app academy way
@@ -13,6 +19,7 @@ export default (state = {}, action) => {
             };
         case ADD_TODO:
         case GET_TODO:
+        case EDIT_TODO:
             return {
                 ...state,
                 [action.payload.id]: action.payload

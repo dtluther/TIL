@@ -15,16 +15,16 @@ class TodoForm extends Component {
     };
 
     onSubmit = formValues => {
-        debugger;
         this.props.onSubmit(formValues);
     };
 
     render() {
+        const btnText = `${this.props.initialValues ? 'Update' : 'Add'}`;
         return (
             <div className='ui segment'>
                 <form className='ui form error' onSubmit={this.props.handleSubmit(this.onSubmit)}>
                     <Field name='title' component={this.renderField} label='Task' />
-                    <button className='ui primary button'>Add</button>
+                    <button className='ui primary button'>{btnText}</button>
                 </form>
             </div>
         );
