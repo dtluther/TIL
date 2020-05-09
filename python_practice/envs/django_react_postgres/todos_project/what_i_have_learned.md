@@ -156,3 +156,8 @@ I'll do a quick summary of the steps I followed to create my Todo List app. I fo
          * add component and route to `app.js`
          * update `btnText` to be conditional in the `todo_form`.
 
+#### Issues
+   * Inability to create new Todo with the Add Todo button in the UI
+     * Since I had my own goals with the todos app, I madea a `title` and a `description` field in the Django models. As a result, I didn't realize that I didn't make description optional, and so when I was trying to submit the new Todo, it was failing because it was not sending a description to the API.
+       * Although, I troubleshooted this the hard way with guess and check because I didn't see this in the server logs and I do not yet know the equivalent of Ruby's `byebug` in Python, so I need to figure that out. I also need to figure out how to show the errors in the server logs, because that would make things much easier
+     * I also had `axios.get` instead of `axios.post` for the `ADD_TODO` action, so originally it was not posting the data. I had to fix both of these things to be able to create a new todo with the UI.
