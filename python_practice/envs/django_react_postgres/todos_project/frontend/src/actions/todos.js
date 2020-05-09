@@ -14,13 +14,21 @@ export const getTodos = () => async dispatch => {
 
 // ADD TODO
 export const addTodo = formValues => async dispatch => {
-    const res = await axios.get('/api/todos/', { ...formValues });
+    const res = await axios.post('/api/todos/', { ...formValues });
     dispatch({
-        type: ADD_TODO,
-        payload: res.data
+      type: ADD_TODO,
+      payload: res.data
     });
-    dispatch(reset('todoForm')); // this clears the form after submission succeeeds
-};
+    dispatch(reset('todoForm'));
+  };
+// export const addTodo = formValues => async dispatch => {
+//     const res = await axios.post('/api/todos/', { ...formValues });
+//     dispatch({
+//         type: ADD_TODO,
+//         payload: res.data
+//     });
+//     dispatch(reset('todoForm')); // this clears the form after submission succeeeds
+// };
 
 // GET TODO
 export const getTodo = id => async dispatch => {
