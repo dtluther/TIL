@@ -46,7 +46,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV='/Users/lex/Documents/coding/til/python_practice/envs/python3.7.7'
+VIRTUAL_ENV='/Users/lex/Documents/coding/til/python_practice/envs/py377_general'
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

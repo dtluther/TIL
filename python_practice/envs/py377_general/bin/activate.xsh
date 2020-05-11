@@ -28,7 +28,7 @@ def _deactivate(args):
 _deactivate(["nondestructive"])
 aliases["deactivate"] = _deactivate
 
-$VIRTUAL_ENV = r"/Users/lex/Documents/coding/til/python_practice/envs/python3.7.7"
+$VIRTUAL_ENV = r"/Users/lex/Documents/coding/til/python_practice/envs/py377_general"
 
 $_OLD_VIRTUAL_PATH = $PATH
 $PATH = $PATH[:]
