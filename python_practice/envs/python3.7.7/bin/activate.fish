@@ -57,7 +57,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV '/Users/lex/Documents/coding/til/python_practice/envs/algos_and_ds'
+set -gx VIRTUAL_ENV '/Users/lex/Documents/coding/til/python_practice/envs/python3.7.7'
 
 # https://github.com/fish-shell/fish-shell/issues/436 altered PATH handling
 if test (echo $FISH_VERSION | head -c 1) -lt 3
