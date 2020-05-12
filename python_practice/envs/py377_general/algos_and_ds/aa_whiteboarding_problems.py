@@ -1,4 +1,4 @@
-# Day 1
+## Day 1
 def digital_root(num):
     '''
     Write a method, digital_root(num). It should sum the digits of a positive
@@ -58,3 +58,5 @@ print(caesar_cipher('hey', 0))
 print(caesar_cipher('hey', 1))
 print(caesar_cipher('hey', 3))
 print(caesar_cipher('hello', 15))
+
+## Day 2
