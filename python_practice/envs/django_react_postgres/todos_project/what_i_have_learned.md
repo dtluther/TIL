@@ -44,6 +44,11 @@ Edit after encountering problem 2: Postgres can just be a b**** in and of itself
 ### Django process
 I'll do a quick summary of the steps I followed to create my Todo List app. I followed a mixture of tutorials, ordered respectively by how much I used them: https://medium.com/technest/build-a-crud-todo-app-with-django-and-react-redux-8ddb0b6ac2f0, https://scotch.io/tutorials/build-a-to-do-application-using-django-and-react, https://docs.djangoproject.com/en/3.0/intro/tutorial01/, https://djangocentral.com/using-postgresql-with-django/, https://tutorial-extensions.djangogirls.org/en/optional_postgresql_installation/, and https://www.valentinog.com/blog/drf/.
 
+#### Other helpful links throughout project
+* Medium article about how `async` and `await` work in JS: https://medium.com/siliconwat/how-javascript-async-await-works-3cab4b7d21da
+* React docs: https://reactjs.org/tutorial/tutorial.html#what-is-react
+* Info about actions and reducers in redux: https://redux.js.org/basics/reducers
+* Keys in React: https://reactjs.org/docs/lists-and-keys.html#keys
 #### Backend/APIs
 1. There was actually quite a bit of confusion from a file structure perspective between two of the main project tutorials (https://scotch.io/tutorials/build-a-to-do-application-using-django-and-react and https://www.valentinog.com/blog/drf/) and which commands to use (`python manage.py startapp [app_name]` vs `django-admin startapp [app_name]`), but I ended up using the first tutorial, because it aligned with the Django docs.
 2. Basically followed everything from this tutorial to setup postgres with django, except for `ENGINE` I didn't include "psycopg2" at the end, so my opening line in `settings.py` was: `'ENGINE': 'django.db.backends.postgresql'`.
