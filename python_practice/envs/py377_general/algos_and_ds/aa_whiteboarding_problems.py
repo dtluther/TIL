@@ -1,4 +1,4 @@
-## Day 1
+## Day 1a
 def digital_root(num):
     '''
     Write a method, digital_root(num). It should sum the digits of a positive
@@ -59,4 +59,28 @@ print(caesar_cipher('hey', 1))
 print(caesar_cipher('hey', 3))
 print(caesar_cipher('hello', 15))
 
-## Day 2
+## Day 1b
+def longest_common_substring(str1, str2):
+    str2_indices = {}
+    for idx, char in enumerate(str2):
+        if str2_indices[char]:
+            str2_indices[char].append(idx)
+        else:
+            str2_indices[char] = [idx]
+
+    long = ''
+    sub1 = ''
+    sub2 = ''
+        
+    for idx, char in enumerate(str1):
+        if char in str2_indices:
+            idx2 = str2_indices[char]
+            idx1 = idx
+
+            sub1 = str1[idx1]
+            sub2 = str2[idx2]
+
+            while len(str2)-1 >= idx2 & len(str1)-1 >= idx1:
+                
+
+
