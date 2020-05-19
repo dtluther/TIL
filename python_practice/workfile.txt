@@ -1,4 +1,0 @@
-This is a sample workfile for the Python Tutorial. This is the first line.
-This is the second line of the file.
-And the third.
-And this is the last line of the file.
