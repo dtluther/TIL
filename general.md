@@ -1,7 +1,7 @@
 # General Notes
 ## Object Oriented Programming
 ### Design Patterns
-#### https://www.oodesign.com/
+https://www.oodesign.com/
 * Singleton
 * Factory
 * Abstract Factory
