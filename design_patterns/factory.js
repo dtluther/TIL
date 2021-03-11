@@ -1,3 +1,5 @@
+// reference: https://www.youtube.com/watch?v=kuirGzhGhyw
+
 function Developer(name) {
   this.name = name;
   this.type = "Developer";
@@ -34,3 +36,11 @@ employees.push(employeeFactory.create('John', 2));
 employees.forEach(emp => {
   say.call(emp);
 })
+
+// Now with the class keyword
+class Shape {
+	constructor(type) {
+		this.type = type;
+	}
+}
+
