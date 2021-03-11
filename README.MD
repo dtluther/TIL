@@ -6,7 +6,8 @@ Today I Learned
 https://www.oodesign.com/
 #### Ones I've heard of
 * Singleton
-* [Factory Method](https://github.com/dtluther/TIL/blob/master/design_patterns/factory.js)
+* Factory Method
+  * [JS Employee Example](https://github.com/dtluther/TIL/blob/master/design_patterns/factory.js)
 * Abstract Factory
 * Builder
 #### Some other ones
