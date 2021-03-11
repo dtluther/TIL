@@ -9,7 +9,7 @@ function Tester(name) {
 }
 
 function say() {
-	console.log(`My name is ${this.name} and I am a ${this.type}.`);
+  console.log(`My name is ${this.name} and I am a ${this.type}.`);
 }
 
 function EmployeeFactory() {
